@@ -129,6 +129,11 @@
 			"ver": "0.5.7",
 			"date": "2022-06-13",
 			"txt": "- Fix data preparation script\n- Fix service worker script"
+		},
+		{
+			"ver": "0.5.8",
+			"date": "2022-06-??",
+			"txt": "\n- (Typos/Tags)"
 		}
 	]
 }

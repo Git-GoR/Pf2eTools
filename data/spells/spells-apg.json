@@ -2550,6 +2550,9 @@
 		},
 		{
 			"name": "Déjà Vu",
+			"alias": [
+				"Deja Vu"
+			],
 			"source": "APG",
 			"page": 218,
 			"level": 1,

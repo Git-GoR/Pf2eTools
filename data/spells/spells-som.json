@@ -1343,42 +1343,58 @@
 						{
 							"type": "item",
 							"name": "1. Red",
-							"entries": ["fire"]
+							"entries": [
+								"fire"
+							]
 						},
 						{
 							"type": "item",
 							"name": "2. Orange",
-							"entries": ["acid"]
+							"entries": [
+								"acid"
+							]
 						},
 						{
 							"type": "item",
 							"name": "3. Yellow",
-							"entries": ["electricity"]
+							"entries": [
+								"electricity"
+							]
 						},
 						{
 							"type": "item",
 							"name": "4. Green",
-							"entries": ["poison"]
+							"entries": [
+								"poison"
+							]
 						},
 						{
 							"type": "item",
 							"name": "5. Blue",
-							"entries": ["sonic"]
+							"entries": [
+								"sonic"
+							]
 						},
 						{
 							"type": "item",
 							"name": "6. Indigo",
-							"entries": ["mental"]
+							"entries": [
+								"mental"
+							]
 						},
 						{
 							"type": "item",
 							"name": "7. Violet",
-							"entries": ["force"]
+							"entries": [
+								"force"
+							]
 						},
 						{
 							"type": "item",
 							"name": "8. Matching Color",
-							"entries": ["The armor becomes the color matching the type of damage the target took most recently in the past minute. If it didn't take any of those seven types of damage or the armor is already that color, roll again, rerolling any results of 8."]
+							"entries": [
+								"The armor becomes the color matching the type of damage the target took most recently in the past minute. If it didn't take any of those seven types of damage or the armor is already that color, roll again, rerolling any results of 8."
+							]
 						}
 					]
 				}
@@ -1435,25 +1451,29 @@
 							"type": "item",
 							"name": "1. Red ",
 							"entries": [
-								"5 fire damage and 5 mental damage."]
+								"5 fire damage and 5 mental damage."
+							]
 						},
 						{
 							"type": "item",
 							"name": "2. Orange",
 							"entries": [
 								"5 acid damage and 5 mental damage."
-								]
+							]
 						},
 						{
 							"type": "item",
 							"name": "3. Yellow",
 							"entries": [
-							"5 electricity damage and 5 mental damage."]
+								"5 electricity damage and 5 mental damage."
+							]
 						},
 						{
 							"type": "item",
 							"name": "4. Green",
-							"entries": ["5 poison damage and 5 mental damage, plus it's {@condition frightened 1}."]
+							"entries": [
+								"5 poison damage and 5 mental damage, plus it's {@condition frightened 1}."
+							]
 						}
 					]
 				}
@@ -1553,7 +1573,7 @@
 										"type": "item",
 										"name": "6. Indigo",
 										"entries": [
-											"({@trait emotion}, {@trait incapacitation}, {@trait mental}) The ray has the effect of the {@spell confusion} spell. On a critical hit, it has the effect of warp mind instead."
+											"({@trait emotion}, {@trait incapacitation}, {@trait mental}) The ray has the effect of the {@spell confusion} spell. On a critical hit, it has the effect of {@spell warp mind} instead."
 										]
 									},
 									{

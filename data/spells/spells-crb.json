@@ -3055,7 +3055,7 @@
 								"style": "list-no-bullets",
 								"items": [
 									"5. {@b Blue} The wall stops auditory, petrification, and {@trait visual} effects from passing through, and creatures passing through are subject to the effects of {@spell flesh to stone}. {@spell Magic missile} can counteract a blue chromatic wall.",
-									"6. {@b Indigo} The wall stops {@trait divination} and {@trait mental} effects from passing through, and those passing through are subject to the effects of warp mind. {@spell Searing light} can counteract an indigo chromatic wall.",
+									"6. {@b Indigo} The wall stops {@trait divination} and {@trait mental} effects from passing through, and those passing through are subject to the effects of {@spell warp mind}. {@spell Searing light} can counteract an indigo chromatic wall.",
 									"7. {@b Violet} The wall prevents spells from targeting the other side (area effects still cross as normal). Creatures passing through must succeed at a Will save or they are {@condition slowed 1} for 1 minute; on a critical failure, the creature is instead sent to another plane, with the effect of {@spell plane shift}. {@spell Dispel magic} can counteract a violet chromatic wall.",
 									"8. Reroll, and creatures that pass through the wall take a \u20132 circumstance penalty to their saves."
 								]
