@@ -132,7 +132,7 @@
 		},
 		{
 			"ver": "0.5.8",
-			"date": "2022-06-??",
+			"date": "2022-06-15",
 			"txt": "- Fix Ancestry Filters\n- Made copying spells more bearable, as they now include spaces\n- (Typos/Tags)"
 		}
 	]
