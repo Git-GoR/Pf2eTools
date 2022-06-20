@@ -82,6 +82,9 @@
 						"type": "integer",
 						"minimum": 0
 					},
+					"passengersNote": {
+						"type": "string"
+					},
 					"pilotingCheck": {
 						"type": "array",
 						"items": {
@@ -189,7 +192,8 @@
 										"burrow",
 										"jump jet",
 										"hover",
-										"walk"
+										"walk",
+										"climb"
 									]
 								},
 								"speed": {

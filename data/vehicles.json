@@ -1830,20 +1830,18 @@
 				}
 			],
 			"abilities": {
-				"mid": [
-					{
-						"entries": [
-							"10 minutes of wind-up, 1 hour of operational time, DC 14, standby"
-						],
-						"name": "Wind-Up"
-					}
-				],
 				"bot": [
 					{
 						"entries": [
 							"Each of the two sidecars can hold 1 passenger or 10 Bulk. The automated cycle's Speed is reduced by 5 feet for each sidecar that contains a passenger or cargo."
 						],
 						"name": "Sidecars"
+					},
+					{
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 14, standby"
+						],
+						"name": "Wind-Up"
 					}
 				]
 			},
@@ -2022,14 +2020,6 @@
 				}
 			],
 			"abilities": {
-				"mid": [
-					{
-						"entries": [
-							"10 minutes of wind-up, 1 hour of operational time, DC 16, standby"
-						],
-						"name": "Wind-Up"
-					}
-				],
 				"bot": [
 					{
 						"entries": [
@@ -2040,6 +2030,12 @@
 							"unit": "action"
 						},
 						"name": "Deploy Wheels"
+					},
+					{
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 16, standby"
+						],
+						"name": "Wind-Up"
 					}
 				]
 			},
@@ -2338,14 +2334,6 @@
 				}
 			],
 			"abilities": {
-				"mid": [
-					{
-						"entries": [
-							"1 hour of wind-up, 8 hours of operational time, DC 18, standby"
-						],
-						"name": "Wind-Up"
-					}
-				],
 				"bot": [
 					{
 						"entries": [
@@ -2358,6 +2346,12 @@
 							"This vehicle must move twice its length for each 90-degree turn it makes."
 						],
 						"name": "Sluggish"
+					},
+					{
+						"entries": [
+							"1 hour of wind-up, 8 hours of operational time, DC 18, standby"
+						],
+						"name": "Wind-Up"
 					}
 				]
 			},
@@ -2821,19 +2815,17 @@
 				"dc": 20
 			},
 			"abilities": {
-				"mid": [
-					{
-						"name": "Wind-Up",
-						"entries": [
-							"10 minutes of wind-up, 1 hour of operational time, DC 20, standby"
-						]
-					}
-				],
 				"bot": [
 					{
 						"name": "Weapon Mount",
 						"entries": [
 							"This vehicle has one rear weapon mount that can be equipped with a ranged weapon. At purchase, this weapon mount is empty. Installing or uninstalling a weapon into this mount requires 10 minutes, a successful DC 20 Crafting check, as well as an appropriate weapon to install."
+						]
+					},
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 20, standby"
 						]
 					}
 				]
@@ -3309,6 +3301,1382 @@
 						"name": "Wind-Up",
 						"entries": [
 							"10 minutes of wind‑up, 1 hour of operational time, DC 32, standby"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Apparatus of the Octopus",
+			"source": "G&G",
+			"page": 97,
+			"level": 11,
+			"traits": [
+				"uncommon",
+				"large"
+			],
+			"entries": [
+				"This apparatus, which is shaped like an octopus (or more rarely, a squid or other aquatic creature), uses almost entirely magical propulsion. Clockwork parts make up the controls and mechanisms to improve some of the functionality, but magic moves the vehicles’ cogs and gears. While it needs only a pilot, it can optionally hold a second crew member, which can be useful if the second crew member controls the apparatus’s hands or eyes."
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 4000
+			},
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 5,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 1,
+			"passengersNote": "the passenger can optionally act as crew but more crew isn’t necessary",
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 28
+				},
+				{
+					"skill": "Crafting",
+					"dc": 30
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 25
+				},
+				"savingThrows": {
+					"fort": 20
+				},
+				"hardness": {
+					"default": 15
+				},
+				"hp": {
+					"default": 150
+				},
+				"bt": {
+					"default": 75
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 5
+				},
+				{
+					"type": "swim",
+					"speed": 40,
+					"note": "clockwork, magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 7d10}",
+				"dc": 28
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Manipulate Hands",
+						"components": [
+							"{@action Interact}"
+						],
+						"activity": {
+							"unit": "action",
+							"number": 2
+						},
+						"entries": [
+							"A crew member operates a lever set up like a joystick, allowing that crew member to extend and manipulate the apparatus’s hands. While the hands can’t attack and can’t perform fine actions such as Disabling a Device, Stealing something, or opening the stopper on a potion bottle, but they can grasp and hold up to 50 Bulk."
+						]
+					},
+					{
+						"name": "Open Eyes",
+						"components": [
+							"{@action Interact}"
+						],
+						"activity": {
+							"unit": "action",
+							"number": 2
+						},
+						"entries": [
+							"A crew member pulls a lever to open the apparatus’s eyes, which shine bright light within 20 feet and dim light for the next 20 feet. A crew member can take this action again to close the eyes."
+						]
+					},
+					{
+						"name": "Open Portholes",
+						"components": [
+							"{@action Interact}"
+						],
+						"activity": {
+							"unit": "action",
+							"number": 2
+						},
+						"entries": [
+							"A crew member pulls a lever to open two portholes, allowing the crew to see outside the apparatus and other creatures to see into it. A crew member can take this action again to close the portholes."
+						]
+					},
+					{
+						"name": "Submersible",
+						"entries": [
+							"The apparatus of the octopus can protect its crew and passengers from water pressure to a maximum depth of 5,000 feet and contains enough air for 12 hours for a pilot alone or 6 hours for a pilot and passenger or crew member."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Speedster",
+			"source": "G&G",
+			"page": 96,
+			"level": 10,
+			"traits": [
+				"rare",
+				"large"
+			],
+			"entries": [
+				"A speedster is a light streamlined hybrid clockwork and steam-powered alchemical chassis roughly the shape of a horse or other creature built for speed. Speedsters are built to maintain a rapid pace that can become even faster for brief periods of time by releasing stored up steam pressure for an extra burst of speed."
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 2900
+			},
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 5,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 1,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 27
+				},
+				{
+					"skill": "Crafting",
+					"dc": 29
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 23
+				},
+				"savingThrows": {
+					"fort": 19
+				},
+				"hardness": {
+					"default": 15
+				},
+				"hp": {
+					"default": 130
+				},
+				"bt": {
+					"default": 65
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 50,
+					"note": "clockwork, magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 7d10}",
+				"dc": 27
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Speed Boost",
+						"activity": {
+							"unit": "action",
+							"number": 1
+						},
+						"entries": [
+							"The pilot releases built up pressure in the speedster’s alchemical steam engine in order to temporarily increase its speed. For 1d4 rounds, the speedster’s Speed becomes 80 feet and all move actions the pilot takes gain the reckless trait. When the pilot takes an action that already would have the reckless trait, the pilot uses the degree of success one worse than the one they rolled on the piloting check. The speedster can’t use Speed Boost again for 1 hour, as the pressure requires time to rebuild."
+						]
+					},
+					{
+						"name": "Streamlined",
+						"entries": [
+							"This lightweight vehicle has no additional storage space for cargo."
+						]
+					},
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind-up, 2 hours of operational time, DC 28, standby"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Clockwork Borer",
+			"source": "G&G",
+			"page": 96,
+			"level": 9,
+			"traits": [
+				"rare",
+				"large"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 2100
+			},
+			"entries": [
+				"A clockwork borer is essentially a huge adamantine drill attached to a large wheeled carriage. The clockwork gears within move the borer itself and spin the drill, allowing it to burrow through loose material quickly and even through solid stone at a slower rate."
+			],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 5,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 5,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 26
+				},
+				{
+					"skill": "Crafting",
+					"dc": 28
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 24
+				},
+				"savingThrows": {
+					"fort": 18
+				},
+				"hardness": {
+					"default": 15
+				},
+				"hp": {
+					"default": 110
+				},
+				"bt": {
+					"default": 55
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 20
+				},
+				{
+					"type": "burrow",
+					"speed": 10,
+					"note": "clockwork"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 6d10}",
+				"dc": 26
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Adamantine Drill",
+						"entries": [
+							"While most burrow Speeds only allow a creature or vehicle to move through loose dirt or earth, this vehicle is equipped with an adamantine drill and can burrow through bedrock and stone at a rate of 5 feet per minute."
+						]
+					},
+					{
+						"name": "Pivoting Seats",
+						"entries": [
+							"This vehicle’s seats are mounted on a weighted platform that pivots as the vehicle moves, automatically adjusting position with gravity. Seated creatures remain upright no matter the position or angle of the vehicle."
+						]
+					},
+					{
+						"name": "Sluggish",
+						"entries": [
+							"Because it is sluggish, this vehicle must move twice its length for each 90-degree turn it makes."
+						]
+					},
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 26, standby"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Mobile Inn",
+			"source": "G&G",
+			"page": 96,
+			"level": 8,
+			"traits": [
+				"rare",
+				"huge"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 1500
+			},
+			"entries": [
+				"A mobile inn is the next step up from an armored carriage, bringing the limited comforts of a simple (and cramped) inn stay to make long distance journeys more bearable for wealthy travelers. Essentially a tiny inn on wheels, powered by alchemical catalysts and a steam engine, the vehicle is equipped with a stove, storage cupboard, washbasin, table, two benches, and a compact sleeping loft large enough to accommodate four. It can be modified to accommodate a single passenger in significantly more comfort or to easily hold 5 passengers by stripping the accommodations."
+			],
+			"space": {
+				"long": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 13,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 3,
+			"passengersNote": "can hold up to 5 by stripping accommodations",
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 24
+				},
+				{
+					"skill": "Crafting",
+					"dc": 26
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 22
+				},
+				"savingThrows": {
+					"fort": 18
+				},
+				"hardness": {
+					"default": 10
+				},
+				"hp": {
+					"default": 100
+				},
+				"bt": {
+					"default": 50
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 30,
+					"note": "alchemical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 5d10}",
+				"dc": 24
+			}
+		},
+		{
+			"name": "Snail Coach",
+			"source": "G&G",
+			"page": 96,
+			"level": 7,
+			"traits": [
+				"uncommon",
+				"huge"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 1000
+			},
+			"entries": [
+				"Shaped like its animal namesake, a snail coach is a trolley powered by a combination of magic and alchemical adhesives, with a hard outer shell to protect itself from attacks. The adhesive trail both allows it to climb and leaves a hindrance for pursuing foes."
+			],
+			"space": {
+				"long": {
+					"number": 30,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 15,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 1
+				}
+			],
+			"passengers": 6,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 23
+				},
+				{
+					"skill": "Crafting",
+					"dc": 25
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 21
+				},
+				"savingThrows": {
+					"fort": 15
+				},
+				"hardness": {
+					"default": 10
+				},
+				"hp": {
+					"default": 100
+				},
+				"bt": {
+					"default": 50
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 15
+				},
+				{
+					"type": "climb",
+					"speed": 15,
+					"note": "alchemical, magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 7d6}",
+				"dc": 21
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Adhesive Secretions",
+						"entries": [
+							"This vehicle secretes an alchemical adhesive that allows it to stick to and climb up solid surfaces. Spaces the snail coach moves through become difficult terrain for 1 round. Any creature that ends their turn on the adhesive must succeed at a DC 23 Reflex save or take a –10-foot status penalty to its Speeds for 1 round. On a critical failure, the creature is also {@condition immobilized} for 1 round ({@action Escape} DC 23)."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Clockwork Hopper",
+			"source": "G&G",
+			"page": 95,
+			"level": 7,
+			"traits": [
+				"uncommon",
+				"large"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 750
+			},
+			"entries": [
+				"A clockwork hopper is similar in form to a large rabbit, making hop-like strides that avoid terrain impediments, though the lurching hops can be bumpy and cause motion sickness in some riders."
+			],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 12,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 2,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 22
+				},
+				{
+					"skill": "Crafting",
+					"dc": 24
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 19
+				},
+				"savingThrows": {
+					"fort": 14
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 80
+				},
+				"bt": {
+					"default": 40
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 35,
+					"note": "clockwork"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 4d10}",
+				"dc": 22
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Hopper",
+						"entries": [
+							"This vehicle hops across the terrain as it moves across the ground. The clockwork hopper ignores difficult terrain from earth, rock, rubble, slopes, and underbrush, and greater difficult terrain caused by those features is normal difficult terrain to the clockwork hopper."
+						]
+					},
+					{
+						"name": "Massive Jump",
+						"activity": {
+							"number": 3,
+							"unit": "action"
+						},
+						"traits": [
+							"move",
+							"reckless"
+						],
+						"entries": [
+							"The pilot engages a spring-driven mechanism that rockets the clockwork hopper into the air, in a grand leap. The vehicle jumps in a straight line in the direction of its current heading without touching the ground, landing in a space of solid ground up to 70 feet forward and up to 30 feet up. Creatures adjacent to the spaces a hopper lands in take {@damage 4d10} bludgeoning damage with a DC 22 basic Reflex save, and are knocked prone on a critical failure. The clockwork hopper can’t use Massive Jump again for 1 minute. Massive Jump stops working if the clockwork hopper is broken."
+						]
+					},
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 22, standby"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Sky Chariot, Light",
+			"source": "FRP2",
+			"page": 73,
+			"level": 7,
+			"traits": [
+				"uncommon",
+				"large"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 1000
+			},
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 15,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 8,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 1,
+			"pilotingCheck": [
+				{
+					"skill": "Arcana",
+					"dc": 25
+				},
+				{
+					"skill": "Nature",
+					"dc": 25,
+					"entry": "{@skill Nature} (DC 25 to 33, depending on pulling creature)"
+				},
+				{
+					"skill": "Piloting Lore",
+					"dc": 23
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 20
+				},
+				"savingThrows": {
+					"fort": 14
+				},
+				"hardness": {
+					"default": 15
+				},
+				"hp": {
+					"default": 80
+				},
+				"bt": {
+					"default": 40
+				},
+				"immunities": [
+					"critical hits",
+					"object immunities",
+					"precision damage"
+				]
+			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the fly Speed of the slowest pulling creature (pulled by 2 Large creatures or 1 Huge creature)"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 5d10}",
+				"dc": 23
+			}
+		},
+		{
+			"name": "Sky Chariot, Medium",
+			"source": "FRP2",
+			"page": 73,
+			"level": 10,
+			"traits": [
+				"uncommon",
+				"huge"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 3000
+			},
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 8,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 3,
+			"pilotingCheck": [
+				{
+					"skill": "Arcana",
+					"dc": 29
+				},
+				{
+					"skill": "Nature",
+					"dc": 29,
+					"entry": "{@skill Nature} (DC 29 to 37, depending on pulling creature)"
+				},
+				{
+					"skill": "Piloting Lore",
+					"dc": 27
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 25
+				},
+				"savingThrows": {
+					"fort": 19
+				},
+				"hardness": {
+					"default": 15
+				},
+				"hp": {
+					"default": 160
+				},
+				"bt": {
+					"default": 80
+				},
+				"immunities": [
+					"critical hits",
+					"object immunities",
+					"precision damage"
+				]
+			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the fly Speed of the slowest pulling creature (pulled by 4 Large creatures, 2 Huge creatures, or 1 Gargantuan creature)"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 7d10}",
+				"dc": 27
+			}
+		},
+		{
+			"name": "Sky Chariot, Heavy",
+			"source": "FRP2",
+			"page": 73,
+			"level": 13,
+			"traits": [
+				"uncommon",
+				"huge"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 9000
+			},
+			"space": {
+				"long": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 8,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 7,
+			"pilotingCheck": [
+				{
+					"skill": "Arcana",
+					"dc": 33
+				},
+				{
+					"skill": "Nature",
+					"dc": 33,
+					"entry": "{@skill Nature} (DC 33 to 41, depending on pulling creature)"
+				},
+				{
+					"skill": "Piloting Lore",
+					"dc": 31
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 29
+				},
+				"savingThrows": {
+					"fort": 23
+				},
+				"hardness": {
+					"default": 20
+				},
+				"hp": {
+					"default": 230
+				},
+				"bt": {
+					"default": 115
+				},
+				"immunities": [
+					"critical hits",
+					"object immunities",
+					"precision damage"
+				]
+			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the fly Speed of the slowest pulling creature (pulled by 6 Large creatures, 2 Huge creatures, or 1 Gargantuan creature)"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 9d10}",
+				"dc": 31
+			}
+		},
+		{
+			"name": "Shark Diver",
+			"source": "LOTGB",
+			"page": 77,
+			"level": 11,
+			"traits": [
+				"uncommon",
+				"huge"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 4200
+			},
+			"space": {
+				"long": {
+					"number": 40,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 20,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 4
+				}
+			],
+			"passengers": 6,
+			"pilotingCheck": [
+				{
+					"skill": "Crafting",
+					"dc": 30
+				},
+				{
+					"skill": "Piloting Lore",
+					"dc": 28
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 26
+				},
+				"savingThrows": {
+					"fort": 20
+				},
+				"hardness": {
+					"default": 15
+				},
+				"hp": {
+					"default": 120
+				},
+				"bt": {
+					"default": 60
+				},
+				"immunities": [
+					"critical hits",
+					"object immunities",
+					"precision damage"
+				],
+				"resistances": [
+					"electricity 10"
+				]
+			},
+			"speed": [
+				{
+					"type": "swim",
+					"speed": 60,
+					"note": "alchemical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 8d10}",
+				"dc": 28
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Electrify",
+						"activity": {
+							"number": 2,
+							"unit": "action"
+						},
+						"frequency": {
+							"freq": 1,
+							"unit": "minute"
+						},
+						"entries": [
+							"Two crew members each perform a 2-action activity on their turn to emit an electrical pulse, dealing {@damage 6d6} damage to all creatures within 10 feet of the shark diver. Crew and passengers of the shark diver are unaffected. Affected creatures must attempt a basic Fortitude save (DC 28)."
+						]
+					},
+					{
+						"name": "Submersible",
+						"entries": [
+							"The shark diver can travel beneath the surface of the water, carrying an air reservoir suitable to sustain 11 Medium creatures for up to 24 hours. The shark diver can safely reach depths of up to 300 feet. If broken, the shark diver loses air from its reservoir, reducing the stored air by 10 minutes per round. A broken shark diver has its maximum depth reduced by half."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Cliff Crawler",
+			"source": "LOTGB",
+			"page": 18,
+			"level": 10,
+			"traits": [
+				"uncommon",
+				"huge"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 3000
+			},
+			"space": {
+				"long": {
+					"number": 30,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 15,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 20,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 2
+				}
+			],
+			"passengers": 3,
+			"pilotingCheck": [
+				{
+					"skill": "Arcana",
+					"dc": 29
+				},
+				{
+					"skill": "Engineering Lore",
+					"dc": 27
+				},
+				{
+					"skill": "Piloting Lore",
+					"dc": 27
+				},
+				{
+					"skill": "Nature",
+					"dc": 29
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 26
+				},
+				"savingThrows": {
+					"fort": 19
+				},
+				"hardness": {
+					"default": 15
+				},
+				"hp": {
+					"default": 170
+				},
+				"bt": {
+					"default": 85
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "climb",
+					"speed": 40,
+					"note": "magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 7d10}",
+				"dc": 27
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Mountain Traverser",
+						"entries": [
+							"Rocks and stones aren't difficult terrain to a cliff crawler, and it can traverse most vertical rock and stone surfaces at up to half its Speed."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Clockwork Bumblebee",
+			"source": "LOTGB",
+			"page": 22,
+			"level": 9,
+			"traits": [
+				"rare",
+				"large",
+				"clockwork"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 2100
+			},
+			"space": {
+				"long": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 8,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 2
+				}
+			],
+			"passengers": 1,
+			"pilotingCheck": [
+				{
+					"skill": "Crafting",
+					"dc": 28
+				},
+				{
+					"skill": "Driving Lore",
+					"dc": 26
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 23
+				},
+				"savingThrows": {
+					"fort": 18
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 120
+				},
+				"bt": {
+					"default": 60
+				},
+				"immunities": [
+					"object immunities"
+				],
+				"weaknesses": [
+					{
+						"name": "electricity",
+						"amount": 10,
+						"note": "until broken"
+					}
+				]
+			},
+			"speed": [
+				{
+					"type": "fly",
+					"speed": 30,
+					"note": "clockwork"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 4d10}",
+				"dc": 26
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10-minute wind, 10-minute operation, DC 26, standby"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Sand Barge",
+			"source": "LOTGB",
+			"page": 76,
+			"level": 6,
+			"traits": [
+				"uncommon",
+				"huge"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 750
+			},
+			"space": {
+				"long": {
+					"number": 30,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 15,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 2
+				}
+			],
+			"passengers": 5,
+			"pilotingCheck": [
+				{
+					"skill": "Diplomacy",
+					"dc": 24
+				},
+				{
+					"skill": "Intimidation",
+					"dc": 24
+				},
+				{
+					"skill": "Sailing Lore",
+					"dc": 22
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 20
+				},
+				"savingThrows": {
+					"fort": 14
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 90
+				},
+				"bt": {
+					"default": 45
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 40,
+					"note": "rowed, wind"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 4d10}",
+				"dc": 22
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Sand Skimmer",
+						"entries": [
+							"The sand barge can travel over sand, water, and quicksand equally well, but it can't traverse solid ground."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Cutter",
+			"source": "LOTGB",
+			"page": 76,
+			"level": 6,
+			"traits": [
+				"huge"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 750
+			},
+			"space": {
+				"long": {
+					"number": 30,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 15,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 20,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 3
+				}
+			],
+			"passengers": 6,
+			"pilotingCheck": [
+				{
+					"skill": "Nature",
+					"dc": 24
+				},
+				{
+					"skill": "Sailing Lore",
+					"dc": 22
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 19
+				},
+				"savingThrows": {
+					"fort": 14
+				},
+				"hardness": {
+					"default": 10
+				},
+				"hp": {
+					"default": 100
+				},
+				"bt": {
+					"default": 50
+				},
+				"immunities": [
+					"object immunities"
+				],
+				"weaknesses": [
+					{
+						"name": "fire",
+						"amount": 10,
+						"note": "until broken"
+					}
+				]
+			},
+			"speed": [
+				{
+					"type": "swim",
+					"speed": 30,
+					"note": "wind"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 4d10}",
+				"dc": 22
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Sluggish",
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
 						]
 					}
 				]

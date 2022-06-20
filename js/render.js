@@ -5601,7 +5601,7 @@ Renderer.vehicle = {
 		${it.entries ? `<p class="pf2-stat pf2-stat__section">${renderer.render(it.entries)}</p>` : ""}
 		${Renderer.utils.getDividerDiv()}
 		<p class="pf2-stat pf2-stat__section"><strong>Space&nbsp;</strong>${Object.entries(it.space).map(([k, v]) => `${v.number} ${v.unit} ${v.name ? v.name : k}`).join(", ")}</p>
-		<p class="pf2-stat pf2-stat__section"><strong>Crew&nbsp;</strong>${it.crew.map(c => `${c.number} ${c.entry ? c.entry : c.type}`).join(", ")}${it.passengers != null ? `; <strong>Passengers&nbsp;</strong>${it.passengers}` : ""}</p>
+		<p class="pf2-stat pf2-stat__section"><strong>Crew&nbsp;</strong>${it.crew.map(c => `${c.number} ${c.entry ? c.entry : c.type}`).join(", ")}${it.passengers ? `; <strong>Passengers&nbsp;</strong>${it.passengers}${it.passengersNote ? ` (${it.passengersNote})` : ""}` : ""}</p>
 		<p class="pf2-stat pf2-stat__section"><strong>Piloting Check&nbsp;</strong>${it.pilotingCheck.length > 1 ? `${it.pilotingCheck.slice(0, -1).map(c => `${c.entry ? `${renderer.render(c.entry)}` : `${c.skill.includes("Lore") ? renderer.render(`{@skill Lore||${c.skill}}`) : renderer.render(`{@skill ${c.skill}}`)} (DC ${c.dc})`}`).join(", ")} or ${it.pilotingCheck.map(c => `${c.entry ? `${renderer.render(c.entry)}` : `${c.skill.includes("Lore") ? renderer.render(`{@skill Lore||${c.skill}}`) : renderer.render(`{@skill ${c.skill}}`)} (DC ${c.dc})`}`).slice(-1)}` : it.pilotingCheck.map(c => `${c.entry ? `${renderer.render(c.entry)}` : `${c.skill.includes("Lore") ? renderer.render(`{@skill Lore||${c.skill}}`) : renderer.render(`{@skill ${c.skill}}`)} (DC ${c.dc})`}`)}</p>
 		${Renderer.utils.getDividerDiv()}
 		${Renderer.vehicle.getDefenses(it, opts)}
