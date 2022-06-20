@@ -7,7 +7,7 @@
 			"level": 12,
 			"traits": [
 				"rare",
-				"Gargantuan"
+				"gargantuan"
 			],
 			"price": {
 				"coin": "gp",
@@ -86,6 +86,10 @@
 					}
 				]
 			},
+			"collision": {
+				"damage": "{@dice 9d10}",
+				"dc": 30
+			},
 			"speed": [
 				{
 					"type": "fly",
@@ -96,10 +100,6 @@
 					]
 				}
 			],
-			"collision": {
-				"damage": "{@dice 9d10}",
-				"dc": 30
-			},
 			"abilities": {
 				"bot": [
 					{
@@ -117,7 +117,7 @@
 			"page": 178,
 			"level": 2,
 			"traits": [
-				"Large"
+				"large"
 			],
 			"price": {
 				"coin": "gp",
@@ -194,7 +194,7 @@
 			"page": 178,
 			"level": 0,
 			"traits": [
-				"Large"
+				"large"
 			],
 			"price": {
 				"coin": "gp",
@@ -271,7 +271,7 @@
 			"page": 178,
 			"level": 10,
 			"traits": [
-				"Gargantuan"
+				"gargantuan"
 			],
 			"price": {
 				"coin": "gp",
@@ -468,7 +468,7 @@
 			"page": 178,
 			"level": 3,
 			"traits": [
-				"Large"
+				"large"
 			],
 			"price": {
 				"coin": "gp",
@@ -545,7 +545,7 @@
 			"page": 178,
 			"level": 0,
 			"traits": [
-				"Large"
+				"large"
 			],
 			"price": {
 				"coin": "gp",
@@ -622,7 +622,7 @@
 			"page": 179,
 			"level": 0,
 			"traits": [
-				"Medium"
+				"medium"
 			],
 			"price": {
 				"coin": "gp",
@@ -709,7 +709,7 @@
 			"page": 179,
 			"level": 9,
 			"traits": [
-				"Gargantuan"
+				"gargantuan"
 			],
 			"price": {
 				"coin": "gp",
@@ -811,7 +811,7 @@
 			"page": 179,
 			"level": 1,
 			"traits": [
-				"Large"
+				"large"
 			],
 			"price": {
 				"coin": "gp",
@@ -905,7 +905,7 @@
 			"level": 14,
 			"traits": [
 				"rare",
-				"Huge"
+				"huge"
 			],
 			"price": {
 				"coin": "gp",
@@ -1000,13 +1000,263 @@
 			}
 		},
 		{
+			"name": "Clockwork Castle",
+			"source": "G&G",
+			"page": 99,
+			"level": 16,
+			"traits": [
+				"rare",
+				"gargantuan"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 30000
+			},
+			"space": {
+				"long": {
+					"number": 30,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 30,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 35,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 2
+				}
+			],
+			"passengers": 10,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 35
+				},
+				{
+					"skill": "Arcana",
+					"dc": 39
+				},
+				{
+					"skill": "Crafting",
+					"dc": 37
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 36
+				},
+				"savingThrows": {
+					"fort": 28
+				},
+				"hardness": {
+					"default": 20
+				},
+				"hp": {
+					"default": 250
+				},
+				"bt": {
+					"default": 125
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 40,
+					"note": "clockwork, magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 11d10}",
+				"dc": 35
+			},
+			"abilities": {
+				"mid": [
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 35, standby"
+						]
+					}
+				],
+				"bot": [
+					{
+						"name": "Environmental Protections",
+						"entries": [
+							"This vehicle's interior temperature is magically maintained. Creatures inside this vehicle are protected from severe cold, severe heat, extreme cold, and extreme heat."
+						]
+					},
+					{
+						"name": "Luxurious Accommodations",
+						"entries": [
+							"This vehicle contains a bridge, engineering room, private sleeping quarters for up to 13 creatures, and four additional rooms (typically a dining room, kitchen, lavatory, and meeting room)."
+						]
+					},
+					{
+						"name": "Maneuverable",
+						"entries": [
+							"This vehicle is mounted on ten spider-like legs that enable it to turn swiftly, turn in place, and even move backward. Each 90-degree turn made in less than a vehicle length costs 5 extra feet of movement; so, for example, it costs 10 feet of movement for the vehicle to turn around and begin moving backward. This vehicle loses these benefits when {@condition broken}."
+						]
+					},
+					{
+						"name": "Skewering Step",
+						"activity": {
+							"number": 1,
+							"unit": "action"
+						},
+						"traits": [
+							"attack"
+						],
+						"entries": [
+							"Two crew members each perform a 3-action activity on their turn to skewer nearby enemies with the clockwork castle's legs. All creatures under or adjacent to the vehicle at the end of the second character's turn take {@damage 7d8} piercing damage (DC 35 basic Reflex save)."
+						]
+					},
+					{
+						"name": "Weapon Mounts",
+						"entries": [
+							"This vehicle has four rooftop weapon mounts; one mount on each corner of the vehicle. At purchase, these weapon mounts are initially empty. Installing or uninstalling a weapon into a weapon mount requires 10 minutes, a successful DC 35 Crafting check, and an appropriate weapon. Three of these weapon mounts can be equipped with ranged weapons, and the fourth can be equipped with a ranged siege weapon of size Large or smaller."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Titanic Stomper",
+			"source": "G&G",
+			"page": 77,
+			"level": 15,
+			"entries": [
+				"Among the most dangerous vehicles created in Ustalav with a mix of magic and the new Stasian technology, a titanic stomper is shaped like a long sinuous lizard or behir with carefully placed Stasian coils and eight big stomping legs. Titanic stompers were meant to devastate the armies of the undead. Only two exist, making them almost unique, and the means to create more have been stymied, as some of the crucial inventors were killed in the process of attempting to design a follow-up technology, a smaller but more powerful suit of mechanized armor called the Grobelarch that ultimately went berserk and killed its creators."
+			],
+			"traits": [
+				"rare",
+				"gargantuan"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 19000
+			},
+			"space": {
+				"long": {
+					"number": 60,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 30,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 60,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 3
+				}
+			],
+			"passengers": 6,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 34
+				},
+				{
+					"skill": "Crafting",
+					"dc": 36
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 34
+				},
+				"savingThrows": {
+					"fort": 26
+				},
+				"hardness": {
+					"default": 20
+				},
+				"hp": {
+					"default": 230
+				},
+				"bt": {
+					"default": 115
+				},
+				"resistances": [
+					"electricity 20"
+				],
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 40,
+					"note": "electrical, magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 9d12}",
+				"dc": 32
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Bolt Blast",
+						"activity": {
+							"number": 3,
+							"unit": "action"
+						},
+						"entries": [
+							"Two crew members each perform a three-action activity on their turn to fire a line of lightning at the end of the second character’s turn. This line of lightning erupts from the front of the titanic stomper at an angle of the crew members’ choice and deals {@damage 5d12} electricity damage to each creature in a 120-foot line (DC 34 basic Reflex save). The Bolt Blast stops working if the titanic stomper is broken."
+						]
+					},
+					{
+						"name": "Electrical Absorption",
+						"activity": {
+							"number": 1,
+							"unit": "reaction"
+						},
+						"trigger": "The titanic stomper is targeted by, or in the area of, an effect that deals electricity damage",
+						"entries": [
+							"The pilot uses their reaction to activate the Stasian coils, which funnels the electricity into the titanic stomper’s electrical engine. The next time Bolt Blast is used within the next minute, the damage it deals increases to {@damage 7d12}."
+						]
+					},
+					{
+						"name": "Quaking Step",
+						"entries": [
+							"The ground shakes with every step a titanic stomper takes. Whenever this vehicle moves, creatures on the ground within 20 feet of its movement path must attempt a DC 32 Reflex save. On a failure, they are {@condition flat‑footed} for 1 round, and on a critical failure, they’re knocked {@condition prone}."
+						]
+					}
+				]
+			}
+		},
+		{
 			"name": "Helepolis",
 			"source": "G&G",
 			"page": 77,
 			"level": 16,
 			"traits": [
 				"rare",
-				"Gargantuan"
+				"gargantuan"
 			],
 			"price": {
 				"coin": "gp",
@@ -1110,12 +1360,122 @@
 			}
 		},
 		{
+			"name": "Battery Tower",
+			"source": "G&G",
+			"page": 177,
+			"level": 16,
+			"traits": [
+				"rare",
+				"gargantuan"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 30000
+			},
+			"space": {
+				"long": {
+					"number": 50,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 50,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 90,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "turners",
+					"number": 150
+				},
+				{
+					"type": "pushers",
+					"number": 2200
+				}
+			],
+			"passengers": 204,
+			"pilotingCheck": [
+				{
+					"skill": "Diplomacy",
+					"dc": 37
+				},
+				{
+					"skill": "Intimidation",
+					"dc": 37
+				},
+				{
+					"skill": "Warfare Lore",
+					"dc": 35
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 34
+				},
+				"savingThrows": {
+					"fort": 28
+				},
+				"hardness": {
+					"default": 25
+				},
+				"hp": {
+					"default": 150
+				},
+				"bt": {
+					"default": 75
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 10,
+					"note": "pushed, turned"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 8d10}",
+				"dc": 32
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Sluggish",
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						]
+					},
+					{
+						"name": "Tiered",
+						"entries": [
+							"A battery tower has five levels. The crew operate at the bottom tier, turning a giant capstan, and up to four passengers can fit on that floor, enough for a full crew for a bombard. The remaining levels carry 50 passengers each. The tiers are specifically meant to be protective, and give those within the battery tower greater cover (or standard cover if the battery tower is broken). A massive ladder runs diagonally through the center of the battery tower, from the front of the top tier to the rear of the bottom tier. The ladder is wide enough for two crew or passengers to climb simultaneously."
+						]
+					},
+					{
+						"name": "Weaponry",
+						"entries": [
+							"A battery tower is usually loaded with black powder siege weapons for heavy assaults, with bombards on the bottom two floors and cannons on the other floors. Their Price is included in that of the battery tower. When building a battery tower, you can choose to replace any of these with other siege weapons of a lower Price. If you want a more expensive siege weapon, you must Craft it separately. Passengers of the battery tower can crew these siege weapons"
+						]
+					}
+				]
+			}
+		},
+		{
 			"name": "Wagon",
 			"source": "GMG",
 			"page": 179,
 			"level": 1,
 			"traits": [
-				"Large"
+				"large"
 			],
 			"price": {
 				"coin": "gp",
@@ -1217,7 +1577,7 @@
 						"components": [
 							"command",
 							"envision",
-							"Interact"
+							"{@action Interact}"
 						],
 						"requirements": "You are piloting Bunta",
 						"entries": [
@@ -1470,18 +1830,20 @@
 				}
 			],
 			"abilities": {
+				"mid": [
+					{
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 14, standby"
+						],
+						"name": "Wind-Up"
+					}
+				],
 				"bot": [
 					{
 						"entries": [
 							"Each of the two sidecars can hold 1 passenger or 10 Bulk. The automated cycle's Speed is reduced by 5 feet for each sidecar that contains a passenger or cargo."
 						],
 						"name": "Sidecars"
-					},
-					{
-						"entries": [
-							"10 minutes of wind-up, 1 hour of operational time, DC 14, standby"
-						],
-						"name": "Wind-Up"
 					}
 				]
 			},
@@ -1660,6 +2022,14 @@
 				}
 			],
 			"abilities": {
+				"mid": [
+					{
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 16, standby"
+						],
+						"name": "Wind-Up"
+					}
+				],
 				"bot": [
 					{
 						"entries": [
@@ -1670,12 +2040,6 @@
 							"unit": "action"
 						},
 						"name": "Deploy Wheels"
-					},
-					{
-						"entries": [
-							"10 minutes of wind-up, 1 hour of operational time, DC 16, standby"
-						],
-						"name": "Wind-Up"
 					}
 				]
 			},
@@ -1974,6 +2338,14 @@
 				}
 			],
 			"abilities": {
+				"mid": [
+					{
+						"entries": [
+							"1 hour of wind-up, 8 hours of operational time, DC 18, standby"
+						],
+						"name": "Wind-Up"
+					}
+				],
 				"bot": [
 					{
 						"entries": [
@@ -1986,12 +2358,6 @@
 							"This vehicle must move twice its length for each 90-degree turn it makes."
 						],
 						"name": "Sluggish"
-					},
-					{
-						"entries": [
-							"1 hour of wind-up, 8 hours of operational time, DC 18, standby"
-						],
-						"name": "Wind-Up"
 					}
 				]
 			},
@@ -2263,13 +2629,13 @@
 					{
 						"name": "Jump Jet",
 						"entries": [
-							"The firework pogo moves exclusively via {@action Leap||Leaping}. For each action spent to {@action Drive}, the pogo {@action Leap||Leaps} 20 feet horizontally or 10 feet vertically."
+							"The firework pogo moves exclusively via {@action Leap||Leaping}. For each action spent to {@action Drive|GMG}, the pogo {@action Leap||Leaps} 20 feet horizontally or 10 feet vertically."
 						]
 					},
 					{
 						"name": "Unstable Launch",
 						"entries": [
-							"When the pilot uses a 3-action activity to recklessly {@action Drive} the firework pogo, it emits a burst of flames on launch that deals {@damage 3d6} fire damage to the pilot, the pogo itself, and each creature in a 10-foot radius (DC 19 basic Reflex save)."
+							"When the pilot uses a 3-action activity to recklessly {@action Drive|GMG} the firework pogo, it emits a burst of flames on launch that deals {@damage 3d6} fire damage to the pilot, the pogo itself, and each creature in a 10-foot radius (DC 19 basic Reflex save)."
 						]
 					}
 				]
@@ -2389,7 +2755,9 @@
 				"uncommon",
 				"large"
 			],
-			"entries": ["Slow but steady, an armored carriage combines clockwork with a protective hull for a safe and comfortable ride."],
+			"entries": [
+				"Slow but steady, an armored carriage combines clockwork with a protective hull for a safe and comfortable ride."
+			],
 			"space": {
 				"long": {
 					"number": 10,
@@ -2453,17 +2821,19 @@
 				"dc": 20
 			},
 			"abilities": {
+				"mid": [
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 20, standby"
+						]
+					}
+				],
 				"bot": [
 					{
 						"name": "Weapon Mount",
 						"entries": [
 							"This vehicle has one rear weapon mount that can be equipped with a ranged weapon. At purchase, this weapon mount is empty. Installing or uninstalling a weapon into this mount requires 10 minutes, a successful DC 20 Crafting check, as well as an appropriate weapon to install."
-						]
-					},
-					{
-						"name": "Wind-Up",
-						"entries": [
-							"10 minutes of wind-up, 1 hour of operational time, DC 20, standby"
 						]
 					}
 				]
@@ -2482,7 +2852,9 @@
 				"uncommon",
 				"large"
 			],
-			"entries": ["A firefly blends magic and technology, using electricity magic and magnetism to hover just above the ground. While a firefly is more box-like than insect-shaped, it gets its name from the constant glow of the light and electricity magic that power it, as well as from the stabilizing magnets that protrude from its sides in roughly the same position as wings would be."],
+			"entries": [
+				"A firefly blends magic and technology, using electricity magic and magnetism to hover just above the ground. While a firefly is more box-like than insect-shaped, it gets its name from the constant glow of the light and electricity magic that power it, as well as from the stabilizing magnets that protrude from its sides in roughly the same position as wings would be."
+			],
 			"space": {
 				"long": {
 					"number": 10,
@@ -2540,7 +2912,7 @@
 				"weaknesses": [
 					{
 						"name": "electricity",
-						"amount": "10"
+						"amount": 10
 					}
 				]
 			},
@@ -2561,16 +2933,23 @@
 						"name": "Flash",
 						"activity": {
 							"number": 3,
-							"unit":"action"
+							"unit": "action"
 						},
-						"traits": ["light"],
+						"traits": [
+							"light"
+						],
 						"entries": [
 							"The pilot overcharges the vehicle, causing it to create a brilliant flash of light. All creatures in the bright light from its glow aura must succeed at a DC 19 Fortitude save or be {@condition dazzled 1} minute. The firefly's light dims for 10 minutes, reducing its glow to 10 feet of dim light, during which time it can't use flash. Flash stops working if the firefly is {@condition broken}."
 						]
 					},
 					{
 						"name": "Glow",
-						"traits": ["light", "evocation", "electricity", "magical"],
+						"traits": [
+							"light",
+							"evocation",
+							"electricity",
+							"magical"
+						],
 						"entries": [
 							"Powered by magical lightning, this vehicle sheds bright light within 20 feet, and dim light for a further 20 feet."
 						]
@@ -2579,6 +2958,357 @@
 						"name": "Hover",
 						"entries": [
 							"This vehicle is held aloft by rapidly spinning propellers that enable it to hover 1 foot in the air. It is incapable of flying any higher, and when the pilot stops the magic or the vehicle breaks, it descends 1 foot to the ground."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Vonthos's Golden Bridge",
+			"source": "G&G",
+			"page": 99,
+			"level": 17,
+			"price": {
+				"coin": "gp",
+				"amount": 50000
+			},
+			"traits": [
+				"unique",
+				"large"
+			],
+			"entries": [
+				"Crafted by the wizard Vonthos as part of his bid to attempt the Test of the Starstone in Absalom, this strange vehicle is considered to be a magical and technological marvel. Vonthos's Golden Bridge is a flying sphere made out of a throne surrounded by several clockwork rings covered in gold and gems infused with powerful adaptive abjurations that grant it unique abilities."
+			],
+			"space": {
+				"long": {
+					"number": 9,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 9,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 9,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 36
+				},
+				{
+					"skill": "Arcana",
+					"dc": 38
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 39
+				},
+				"savingThrows": {
+					"fort": 29
+				},
+				"hardness": {
+					"default": 20
+				},
+				"hp": {
+					"default": 310
+				},
+				"bt": {
+					"default": 155
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "fly",
+					"speed": 40,
+					"note": "clockwork, magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 11d10}",
+				"dc": 36
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Captivating Wealth",
+						"traits": [
+							"aura",
+							"enchantment",
+							"magical",
+							"mental",
+							"visual"
+						],
+						"entries": [
+							"40 feet. The gold, gems, and other embellishments that adorn this flying sphere emit a sparkling resplendence capable of enthralling creatures. Each creature that begins its turn within the aura must attempt a DC 36 Will save; on a failure, the creature is {@condition fascinated} and {@condition stupefied 2} for as long as it remains within the aura. A creature that succeeds is temporarily immune for 1 hour. Each time Prismatic Defense is activated, the area of Captivating Wealth is reduced by 10 feet for 1 hour, to a minimum of 0 feet."
+						]
+					},
+					{
+						"name": "Protective Barrier",
+						"entries": [
+							"While the swirling rings of the vehicle don't fully cover the pilot, they offer incredible protection, magically maintaining the temperature within and ablating physical attacks. The pilot is protected from severe cold, severe heat, extreme cold, and extreme heat. The pilot also gains resistance 10 to all physical damage (except adamantine). {@b Prismatic Defense} {@as 1} ({@trait abjuration}, {@trait magical}) The pilot harnesses power from the magical gemstones hidden among this vehicle's extravagant embellishments to grant the vehicle additional defenses. This vehicle gains resistance 20 to one of the following energy damage types: acid, cold, electricity, fire, force, or sonic. This immunity lasts until Prismatic Defense is next activated."
+						]
+					},
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 37, standby"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Sand Racer",
+			"source": "SoT5",
+			"page": 79,
+			"level": 15,
+			"traits": [
+				"uncommon",
+				"large",
+				"magical"
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 18500
+			},
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 5,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 1,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 30
+				},
+				{
+					"skill": "Crafting",
+					"dc": 35
+				},
+				{
+					"skill": "Arcana",
+					"dc": 36
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 34
+				},
+				"savingThrows": {
+					"fort": 24
+				},
+				"hardness": {
+					"default": 20
+				},
+				"hp": {
+					"default": 170
+				},
+				"bt": {
+					"default": 85
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 90,
+					"note": "thasteron"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 10d6} bludgeoning and {@dice 6d6} fire",
+				"dc": 30
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Burning Exhaust",
+						"activity": {
+							"number": 2,
+							"unit": "action"
+						},
+						"entries": [
+							"Attempt a two-action Piloting check to {@action Drive} the sand racer.",
+							{
+								"type": "successDegree",
+								"entries": {
+									"Critical Success": [
+										"The sand racer moves up to its Speed and can turn normally. Choose up to two creatures that the sand racer was adjacent to when it began this movement. Both of those creatures take 6d6 fire damage from the sand racer's burning exhaust (DC 30 basic Reflex save)."
+									],
+									"Success": [
+										"As critical success, but choose only one creature."
+									],
+									"Failure": [
+										"As success, but the creature gains a +4 circumstance bonus to its Reflex save, and the sand racer moves its Speed in a straight line."
+									],
+									"Critical Failure": [
+										"You fail to blast any creatures with the burning exhaust. The sand racer moves its Speed in a straight line and becomes uncontrolled."
+									]
+								}
+							}
+						]
+					},
+					{
+						"name": "Exploratory Kit",
+						"entries": [
+							"Sand racers were built to aid in long-distance exploration of Akiton's sandy wastelands, and have storage capacity for 14 days of rations for a Medium creature and 14 days of fuel. They also have a small storage compartment in the front designed to store a {@item repair kit} and replacement parts for the more delicate pieces of machinery."
+						]
+					},
+					{
+						"name": "Speed Boost",
+						"activity": {
+							"number": 1,
+							"unit": "action"
+						},
+						"frequency": {
+							"freq": 10,
+							"unit": "minute"
+						},
+						"entries": [
+							"The pilot triggers an injection of thasteron directly into the sand racer's engine to briefly increase its speed. For 1 round the sand racer's Speed becomes 180 feet, all piloting checks with the sand racer gain the {@trait reckless} trait, and the pilot gains a +2 circumstance to any {@skill Acrobatics} or piloting checks made to navigate specific challenges. A speed boost is terribly inefficient, and consumes a day's worth of fuel."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Ambling Surveyor",
+			"source": "G&G",
+			"page": 98,
+			"level": 15,
+			"traits": [
+				"rare",
+				"huge"
+			],
+			"entries": [
+				"This huge, magical clockwork rover moves on a continuous band of heavy treads, which make it easier to for the device to navigate across various adverse conditions. It contains magical clockwork birds which can transmit visual information back to the surveyor."
+			],
+			"price": {
+				"coin": "gp",
+				"amount": 13000
+			},
+			"space": {
+				"long": {
+					"number": 15,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 15,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 20,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 2
+				}
+			],
+			"passengers": 7,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 32
+				},
+				{
+					"skill": "Crafting",
+					"dc": 34
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 33
+				},
+				"savingThrows": {
+					"fort": 25
+				},
+				"hardness": {
+					"default": 20
+				},
+				"hp": {
+					"default": 190
+				},
+				"bt": {
+					"default": 95
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 15,
+					"note": "clockwork, magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 8d12}",
+				"dc": 30
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Continuous Track",
+						"entries": [
+							"This vehicle travels on a continuous band of heavy treads driven by a series of gears and wheels, enabling it to travel over rugged land with ease. Earth, rock, rubble, slopes, and underbrush are not difficult terrain to an ambling surveyor. The ambling surveyor ignores difficult terrain from earth, rock, rubble, slopes, and underbrush, and greater difficult terrain caused by those features is normal difficult terrain to the ambling surveyor."
+						]
+					},
+					{
+						"name": "Sluggish",
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						]
+					},
+					{
+						"name": "Survey",
+						"requirements": "The ambling surveyor is not in motion",
+						"entries": [
+							"The pilot and crew release a collection of six clockwork birds, which spend two hours flying over the surrounding area within a 1-mile radius around the ambling surveyor. Everything the birds see is magically transmitted back to the ambling surveyor’s crew as illusory images, which the crew must catalogue in real-time if they want to use the information to fully survey the area and create a map. After two hours, the birds return. The birds use the base statistics of clockwork spies (Bestiary 3 page 48) if they are attacked, or if their Perception is important to determine what they can see, although they only perform the Survey action and they don’t have any of the other abilities of a clockwork spy. Replacement birds cost 250 gp each."
+						]
+					},
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind‑up, 1 hour of operational time, DC 32, standby"
 						]
 					}
 				]
