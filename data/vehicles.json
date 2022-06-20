@@ -6,9 +6,9 @@
 			"page": 177,
 			"level": 12,
 			"traits": [
-				"rare"
+				"rare",
+				"Gargantuan"
 			],
-			"size": "Gargantuan",
 			"price": {
 				"coin": "gp",
 				"amount": 6000
@@ -86,33 +86,39 @@
 					}
 				]
 			},
-			"speed": {
-				"type": "fly",
-				"speed": 50,
-				"traits": [
-					"alchemical",
-					"magical"
-				]
-			},
+			"speed": [
+				{
+					"type": "fly",
+					"speed": 50,
+					"traits": [
+						"alchemical",
+						"magical"
+					]
+				}
+			],
 			"collision": {
 				"damage": "{@dice 9d10}",
 				"dc": 30
 			},
-			"abilities": [
-				{
-					"name": "Sluggish",
-					"entries": [
-						"This vehicle must move twice its length for each 90-degree turn it makes."
-					]
-				}
-			]
+			"abilities": {
+				"bot": [
+					{
+						"name": "Sluggish",
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						]
+					}
+				]
+			}
 		},
 		{
 			"name": "Carriage",
 			"source": "GMG",
 			"page": 178,
 			"level": 2,
-			"size": "Large",
+			"traits": [
+				"Large"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 50
@@ -171,10 +177,12 @@
 					"precision damage"
 				]
 			},
-			"speed": {
-				"type": "special",
-				"entry": "the speed of the slowest pulling creature (pulled by 2 Large creatures)"
-			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the speed of the slowest pulling creature (pulled by 2 Large creatures)"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 2d8}",
 				"dc": 16
@@ -185,7 +193,9 @@
 			"source": "GMG",
 			"page": 178,
 			"level": 0,
-			"size": "Large",
+			"traits": [
+				"Large"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 3
@@ -244,10 +254,12 @@
 					"precision damage"
 				]
 			},
-			"speed": {
-				"type": "special",
-				"entry": "the Speed of the slowest pulling creature (pulled by 1 Large creature)"
-			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the Speed of the slowest pulling creature (pulled by 1 Large creature)"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 1d10}",
 				"dc": 14
@@ -258,7 +270,9 @@
 			"source": "GMG",
 			"page": 178,
 			"level": 10,
-			"size": "Gargantuan",
+			"traits": [
+				"Gargantuan"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 3000
@@ -332,23 +346,27 @@
 					}
 				]
 			},
-			"speed": {
-				"type": "swim",
-				"speed": 30,
-				"note": "rowed, wind"
-			},
+			"speed": [
+				{
+					"type": "swim",
+					"speed": 30,
+					"note": "rowed, wind"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 7d10}",
 				"dc": 27
 			},
-			"abilities": [
-				{
-					"name": "Maneuverable",
-					"entries": [
-						"With a full complement of skilled rowers, a rowed galley can turn swiftly, turn in place, and even row backwards. Each 90-degree turn made in less than a vehicle length costs 5 extra feet of movement. It can row backwards no faster than half its speed, and it can't turn while rowing backwards."
-					]
-				}
-			]
+			"abilities": {
+				"bot": [
+					{
+						"name": "Maneuverable",
+						"entries": [
+							"With a full complement of skilled rowers, a rowed galley can turn swiftly, turn in place, and even row backwards. Each 90-degree turn made in less than a vehicle length costs 5 extra feet of movement. It can row backwards no faster than half its speed, and it can't turn while rowing backwards."
+						]
+					}
+				]
+			}
 		},
 		{
 			"name": "Glider",
@@ -356,9 +374,9 @@
 			"page": 178,
 			"level": 0,
 			"traits": [
-				"uncommon"
+				"uncommon",
+				"large"
 			],
-			"size": "Large",
 			"price": {
 				"coin": "gp",
 				"amount": 15
@@ -422,30 +440,36 @@
 					}
 				]
 			},
-			"speed": {
-				"type": "fly",
-				"speed": 25,
-				"note": "wind"
-			},
+			"speed": [
+				{
+					"type": "fly",
+					"speed": 25,
+					"note": "wind"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 2d4}",
 				"dc": 14
 			},
-			"abilities": [
-				{
-					"name": "Starting Drop",
-					"entries": [
-						"The only way to launch a glider is to jump off a steep incline with favorable wind conditions. The glider is uncontrolled and falls 60 feet each round until the pilot successfully Takes Control. If the glider hits the ground before the pilot successfully Takes Control, the pilot and the glider each take falling damage."
-					]
-				}
-			]
+			"abilities": {
+				"bot": [
+					{
+						"name": "Starting Drop",
+						"entries": [
+							"The only way to launch a glider is to jump off a steep incline with favorable wind conditions. The glider is uncontrolled and falls 60 feet each round until the pilot successfully {@action Take Control|GMG|Takes Control}. If the glider hits the ground before the pilot successfully {@action Take Control|GMG|Takes Control}, the pilot and the glider each take falling damage."
+						]
+					}
+				]
+			}
 		},
 		{
 			"name": "Heavy Chariot",
 			"source": "GMG",
 			"page": 178,
 			"level": 3,
-			"size": "Large",
+			"traits": [
+				"Large"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 150
@@ -504,10 +528,12 @@
 					"precision damage"
 				]
 			},
-			"speed": {
-				"type": "special",
-				"entry": "the speed of the slowest pulling creature (pulled by 2 Large creatures)"
-			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the speed of the slowest pulling creature (pulled by 2 Large creatures)"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 2d10}",
 				"dc": 18
@@ -518,7 +544,9 @@
 			"source": "GMG",
 			"page": 178,
 			"level": 0,
-			"size": "Large",
+			"traits": [
+				"Large"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 10
@@ -577,10 +605,12 @@
 					"precision damage"
 				]
 			},
-			"speed": {
-				"type": "special",
-				"entry": "the Speed of the slowest pulling creature (pulled by 1 Large creature)"
-			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the Speed of the slowest pulling creature (pulled by 1 Large creature)"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 1d12}",
 				"dc": 14
@@ -591,7 +621,9 @@
 			"source": "GMG",
 			"page": 179,
 			"level": 0,
-			"size": "Medium",
+			"traits": [
+				"Medium"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 15
@@ -649,30 +681,36 @@
 					"precision damage"
 				]
 			},
-			"speed": {
-				"type": "swim",
-				"speed": 20,
-				"note": "rowed"
-			},
+			"speed": [
+				{
+					"type": "swim",
+					"speed": 20,
+					"note": "rowed"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 2d4}",
 				"dc": 14
 			},
-			"abilities": [
-				{
-					"name": "Portaged",
-					"entries": [
-						"The rowboat can be carried overland by 2 Medium creatures or 1 Large creature. Those creatures are {@condition encumbered} when doing so."
-					]
-				}
-			]
+			"abilities": {
+				"bot": [
+					{
+						"name": "Portaged",
+						"entries": [
+							"The rowboat can be carried overland by 2 Medium creatures or 1 Large creature. Those creatures are {@condition encumbered} when doing so."
+						]
+					}
+				]
+			}
 		},
 		{
 			"name": "Sailing Ship",
 			"source": "GMG",
 			"page": 179,
 			"level": 9,
-			"size": "Gargantuan",
+			"traits": [
+				"Gargantuan"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 2000
@@ -745,30 +783,36 @@
 					}
 				]
 			},
-			"speed": {
-				"type": "swim",
-				"speed": 40,
-				"note": "wind"
-			},
+			"speed": [
+				{
+					"type": "swim",
+					"speed": 40,
+					"note": "wind"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 6d10}",
 				"dc": 26
 			},
-			"abilities": [
-				{
-					"name": "Sluggish",
-					"entries": [
-						"This vehicle must move twice its length for each 90-degree turn it makes."
-					]
-				}
-			]
+			"abilities": {
+				"bot": [
+					{
+						"name": "Sluggish",
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						]
+					}
+				]
+			}
 		},
 		{
 			"name": "Sleigh",
 			"source": "GMG",
 			"page": 179,
 			"level": 1,
-			"size": "Large",
+			"traits": [
+				"Large"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 50
@@ -827,28 +871,32 @@
 					"precision damage"
 				]
 			},
-			"speed": {
-				"type": "special",
-				"entry": "the speed of the slowest pulling creature (pulled by 2 Large creatures or 6 Medium creatures)"
-			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the speed of the slowest pulling creature (pulled by 2 Large creatures or 6 Medium creatures)"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 2d6}",
 				"dc": 15
 			},
-			"abilities": [
-				{
-					"name": "Ice Traverser",
-					"entries": [
-						"Ice and snow are not {@quickref difficult terrain||3|terrain} to a sleigh, but all other terrains are {@quickref difficult terrain||3|terrain} for it."
-					]
-				},
-				{
-					"name": "Sluggish",
-					"entries": [
-						"This vehicle must move twice its length for each 90-degree turn it makes."
-					]
-				}
-			]
+			"abilities": {
+				"bot": [
+					{
+						"name": "Ice Traverser",
+						"entries": [
+							"Ice and snow are not {@quickref difficult terrain||3|terrain} to a sleigh, but all other terrains are {@quickref difficult terrain||3|terrain} for it."
+						]
+					},
+					{
+						"name": "Sluggish",
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						]
+					}
+				]
+			}
 		},
 		{
 			"name": "Steam Giant",
@@ -856,9 +904,9 @@
 			"page": 179,
 			"level": 14,
 			"traits": [
-				"rare"
+				"rare",
+				"Huge"
 			],
-			"size": "Huge",
 			"price": {
 				"coin": "gp",
 				"amount": 12500
@@ -920,42 +968,46 @@
 					"precision damage"
 				]
 			},
-			"speed": {
-				"type": "walk",
-				"speed": 20,
-				"traits": [
-					"alchemical"
-				]
-			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 20,
+					"traits": [
+						"alchemical"
+					]
+				}
+			],
 			"collision": {
 				"damage": "{@dice 10d10}",
 				"dc": 29
 			},
-			"abilities": [
-				{
-					"name": "Flame Jet",
-					"activity": {
-						"number": 3,
-						"unit": "action"
-					},
-					"traits": [
-						"fire"
-					],
-					"entries": [
-						"Two crew members each perform a 3-action activity on their turn to produce a gout of flames that erupts at the end of the second character's turn from any corner of any space the steam giant occupies. The flames deal {@damage 6d8} fire damage to each creature in a 30-foot cone (DC 32 basic Reflex save). The flame jet stops working if the steam giant is broken."
-					]
-				}
-			]
+			"abilities": {
+				"bot": [
+					{
+						"name": "Flame Jet",
+						"activity": {
+							"number": 3,
+							"unit": "action"
+						},
+						"traits": [
+							"fire"
+						],
+						"entries": [
+							"Two crew members each perform a 3-action activity on their turn to produce a gout of flames that erupts at the end of the second character's turn from any corner of any space the steam giant occupies. The flames deal {@damage 6d8} fire damage to each creature in a 30-foot cone (DC 32 basic Reflex save). The flame jet stops working if the steam giant is broken."
+						]
+					}
+				]
+			}
 		},
 		{
 			"name": "Helepolis",
-			"source": "G&g",
+			"source": "G&G",
 			"page": 77,
 			"level": 16,
 			"traits": [
-				"rare"
+				"rare",
+				"Gargantuan"
 			],
-			"size": "Gargantuan",
 			"price": {
 				"coin": "gp",
 				"amount": 30000
@@ -1023,42 +1075,48 @@
 					"object immunities"
 				]
 			},
-			"speed": {
-				"type": "walk",
-				"speed": 10,
-				"note": "pushed, turned"
-			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 10,
+					"note": "pushed, turned"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 8d10}",
 				"dc": 32
 			},
-			"abilities": [
-				{
-					"name": "Sluggish",
-					"entries": [
-						"This vehicle must move twice its length for each 90-degree turn it makes."
-					]
-				},
-				{
-					"name": "Tiered",
-					"entries": [
-						"A helepolis has six levels. The crew operate at the bottom tier, turning a giant capstan. There's room remaining on that tier for up to six passengers (enough for a full heavy ballista siege crew; see Weaponry). Each of the remaining five levels carries up to 60 passengers. The tiers are specifically meant to be protective and give those within the helepolis {@quickref greater cover||3|cover} (or @quickref standard cover||3|cover} if the helepolis is {@condition broken}). A massive ladder runs diagonally through the center of the helepolis, from the front of the top tier to the rear of the bottom tier. The ladder is wide enough for two crew or passengers to climb simultaneously."
-					]
-				},
-				{
-					"name": "Weaponry",
-					"entries": [
-						"The siege tower is loaded to the brim with siege weapons\u2014typically bristling with {@item heavy ballista|G&G|heavy ballistas} on its first and second tiers and ballistas on its third, fourth, and fifth. The Price of these weapons is included in that of the helepolis. When building a helepolis, you can choose to replace any of these with other siege weapons with a lower Price. If you want a more expensive siege weapon, you must {@action Craft} it separately. Because of the helepolis's structure, any siege weapon in it must launch its payload straight ahead. For instance, a {@item ballista|G&G} or {@item springald|G&G} could function in a helepolis, but not a {@item catapult|G&G} or {@item trebuchet|G&G}. Passengers of the helepolis can crew these siege weapons."
-					]
-				}
-			]
+			"abilities": {
+				"bot": [
+					{
+						"name": "Sluggish",
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						]
+					},
+					{
+						"name": "Tiered",
+						"entries": [
+							"A helepolis has six levels. The crew operate at the bottom tier, turning a giant capstan. There's room remaining on that tier for up to six passengers (enough for a full heavy ballista siege crew; see Weaponry). Each of the remaining five levels carries up to 60 passengers. The tiers are specifically meant to be protective and give those within the helepolis {@quickref greater cover||3|cover} (or @quickref standard cover||3|cover} if the helepolis is {@condition broken}). A massive ladder runs diagonally through the center of the helepolis, from the front of the top tier to the rear of the bottom tier. The ladder is wide enough for two crew or passengers to climb simultaneously."
+						]
+					},
+					{
+						"name": "Weaponry",
+						"entries": [
+							"The siege tower is loaded to the brim with siege weapons\u2014typically bristling with {@item heavy ballista|G&G|heavy ballistas} on its first and second tiers and ballistas on its third, fourth, and fifth. The Price of these weapons is included in that of the helepolis. When building a helepolis, you can choose to replace any of these with other siege weapons with a lower Price. If you want a more expensive siege weapon, you must {@action Craft} it separately. Because of the helepolis's structure, any siege weapon in it must launch its payload straight ahead. For instance, a {@item ballista|G&G} or {@item springald|G&G} could function in a helepolis, but not a {@item catapult|G&G} or {@item trebuchet|G&G}. Passengers of the helepolis can crew these siege weapons."
+						]
+					}
+				]
+			}
 		},
 		{
 			"name": "Wagon",
 			"source": "GMG",
 			"page": 179,
 			"level": 1,
-			"size": "Large",
+			"traits": [
+				"Large"
+			],
 			"price": {
 				"coin": "gp",
 				"amount": 25
@@ -1117,13 +1175,1413 @@
 					"precision damage"
 				]
 			},
-			"speed": {
-				"type": "special",
-				"entry": "the speed of the slowest pulling creature (pulled by 2 Large creatures)"
-			},
+			"speed": [
+				{
+					"type": "special",
+					"entry": "the speed of the slowest pulling creature (pulled by 2 Large creatures)"
+				}
+			],
 			"collision": {
 				"damage": "{@dice 2d6}",
 				"dc": 15
+			}
+		},
+		{
+			"name": "Bunta",
+			"source": "SoT6",
+			"page": 76,
+			"level": 24,
+			"traits": [
+				"unique",
+				"medium",
+				"artifact",
+				"conjuration",
+				"magical",
+				"teleportation"
+			],
+			"abilities": {
+				"mid": [
+					{
+						"entries": [
+							"Bunta can be damaged by spells like {@spell spirit blast} that damage a creature's spirit directly, and such effects ignore Bunta's hardness."
+						],
+						"name": "Spirit Ship"
+					}
+				],
+				"bot": [
+					{
+						"activity": {
+							"number": 3,
+							"unit": "action"
+						},
+						"components": [
+							"command",
+							"envision",
+							"Interact"
+						],
+						"requirements": "You are piloting Bunta",
+						"entries": [
+							"A silver river flows from your heart, traveling forward in a line that flows around obstacles as if it were water. If Bunta travels at least its speed along the river each round for 10 minutes, you arrive at another plane as if you cast {@spell plane shift}. You arrive in a destination you specify, or a random location if you don't have a choice. If Bunta ever does not travel at least its Speed in a round, you can disrupt this activation. If you continue, you have a 1% cumulative chance of ending up in a random extraplanar location for each round that Bunta did not travel at least its Speed, to a maximum of a 60% chance if Bunta didn't travel at least its Speed for the full 10 minutes. As long as you remain on Bunta, you are protected from any harmful effects of the plane's environment."
+						]
+					},
+					{
+						"entries": [
+							"You pilot Bunta into a creature's soul, finding and restoring its true nature. Bunta attempts to counteract all magical effects on the creature. Its counteract level is 20, with a counteract modifier of +40."
+						],
+						"name": "Secret of Souls"
+					}
+				]
+			},
+			"entries": [
+				"This hand-woven coracle appears large enough to hold only a single person. When you pilot the boat, however, you can take on up to a dozen passengers, which ride in your soul. While there, their bodies and equipment are absorbed into you—they are aware of everything you sense and can communicate telepathically with you or any other passengers, but otherwise can't act except to {@action Recall Knowledge} and use actions that require only the use of their mind (as determined by the GM). They can exit your soul, or you can remove any number of them using a single action—which has the {@trait concentrate} trait—causing them to appear in a space adjacent to Bunta. If you leave Bunta or are killed, any creatures in your soul immediately exit your body into the nearest available space. If you leave Bunta after piloting it, you can use a single action, which has the {@trait concentrate} trait, to store the boat in your soul. You can remove it from your soul into an adjacent square with another such action. If Bunta takes enough damage to destroy it, it bursts into golden mist, then reforms over 24 hours in its last pilot's soul."
+			],
+			"space": {
+				"long": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 3,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Arcana",
+					"dc": 30
+				},
+				{
+					"skill": "Nature",
+					"dc": 30
+				},
+				{
+					"skill": "Sailing Lore",
+					"dc": 32
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 50
+				},
+				"savingThrows": {
+					"fort": 46
+				},
+				"hardness": {
+					"default": 25
+				},
+				"hp": {
+					"default": 500
+				},
+				"bt": {
+					"default": 250
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "fly",
+					"speed": 40,
+					"note": "magical"
+				},
+				{
+					"type": "swim",
+					"speed": 40,
+					"note": "magical"
+				},
+				{
+					"type": "swim",
+					"speed": 20,
+					"note": "rowed"
+				}
+			],
+			"collision": {
+				"entries": "secret of souls"
+			},
+			"destruction": "Bunta can only be permanently destroyed if Old-Mage Jatembe unweaves it, then submerges each reed in the River Styx at the base of Pharasma's Spire."
+		},
+		{
+			"name": "Clunkerjunker",
+			"source": "G&G",
+			"page": 93,
+			"level": 1,
+			"price": {
+				"coin": "gp",
+				"amount": 30
+			},
+			"traits": [
+				"uncommon",
+				"medium"
+			],
+			"abilities": {
+				"bot": [
+					{
+						"entries": [
+							"When this vehicle takes physical damage the pilot must attempt a DC {@flatDC 11} flat check (or a DC {@flatDC 20} flat check when it takes a critical hit). On a failure, the armored hull fractures and the vehicle loses its Hardness and takes a –4 circumstance penalty to AC."
+						],
+						"name": "Fall Apart"
+					},
+					{
+						"traits": [
+							"aura",
+							"fire"
+						],
+						"entries": [
+							"10 feet. Whenever this vehicle is being piloted, it continually emits a thin haze of smoke and chemicals. Creatures in the aura (including the pilot and passengers) take a –1 circumstance penalty to visual {@skill Perception} checks."
+						],
+						"name": "Smog"
+					},
+					{
+						"traits": [
+							"fire"
+						],
+						"activity": {
+							"unit": "action",
+							"number": 3
+						},
+						"entries": [
+							"The pilot performs a three-action activity on their turn to vent alchemical fire out the sides of this vehicle. This requires three flasks of minor alchemist's fire, which the pilot loads into the vent as part of the activity. The pilot must then attempt a DC {@flatDC 5} flat check. On a success, creatures adjacent to this vehicle take {@damage 1d8} fire damage (DC 15 basic Reflex save). On a failure, it backfires, dealing {@damage 1d8} fire damage to the pilot and any passengers, with no save."
+						],
+						"name": "Volatile Flamethrower"
+					}
+				]
+			},
+			"entries": [
+				"A favorite of goblins, a clunkerjunker is essentially an armored cart built out of junk that uses volatile flammable chemicals, explosions, and alchemical reactions to propel itself bumpily along. While the initial idea is impressive and the cost of creating one is surprisingly low, these junkers, unfortunately, have a strong tendency to malfunction, and they're always one bad bump away from disaster."
+			],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 5,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 16
+				},
+				{
+					"skill": "Crafting",
+					"dc": 18
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 13
+				},
+				"savingThrows": {
+					"fort": 7
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 18
+				},
+				"bt": {
+					"default": 9
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 30,
+					"note": "alchemical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 2d6}",
+				"dc": 15
+			}
+		},
+		{
+			"name": "Automated Cycle",
+			"source": "G&G",
+			"page": 92,
+			"level": 1,
+			"price": {
+				"coin": "gp",
+				"amount": 50
+			},
+			"traits": [
+				"uncommon",
+				"large"
+			],
+			"entries": [
+				"This clockwork cycle provides most of its mobility via cogs and gears, which allow the cycle to move at a reasonable pace without the need for significant pedaling effort on the part of the pilot. The pilot uses a system of pedals and steering to control the speed and direction of the vehicle. The vehicle comes equipped with two sidecars, one on each side of the pilot."
+			],
+			"space": {
+				"long": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 3,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 2,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 15
+				},
+				{
+					"skill": "Crafting",
+					"dc": 17
+				}
+			],
+			"abilities": {
+				"bot": [
+					{
+						"entries": [
+							"Each of the two sidecars can hold 1 passenger or 10 Bulk. The automated cycle's Speed is reduced by 5 feet for each sidecar that contains a passenger or cargo."
+						],
+						"name": "Sidecars"
+					},
+					{
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 14, standby"
+						],
+						"name": "Wind-Up"
+					}
+				]
+			},
+			"defenses": {
+				"ac": {
+					"default": 11
+				},
+				"savingThrows": {
+					"fort": 7
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 18
+				},
+				"bt": {
+					"default": 9
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 30,
+					"note": "clockwork"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 1d10}",
+				"dc": 15
+			}
+		},
+		{
+			"name": "Velocipede",
+			"source": "LOTGB",
+			"page": 77,
+			"level": 1,
+			"price": {
+				"coin": "gp",
+				"amount": 60
+			},
+			"traits": [
+				"uncommon",
+				"medium"
+			],
+			"space": {
+				"long": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 2,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 4,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Athletics",
+					"dc": 15
+				},
+				{
+					"skill": "Piloting Lore",
+					"dc": 17
+				}
+			],
+			"abilities": {
+				"bot": [
+					{
+						"entries": [
+							"Driving the velocipede over difficult terrain increases the DC by an additional 2 and gains the {@trait reckless} trait."
+						],
+						"name": "Fragile"
+					},
+					{
+						"entries": [
+							"The velocipede can be pulled along the ground on its wheel by a Medium creature. The creature is {@condition encumbered} when doing so."
+						],
+						"name": "Portable"
+					}
+				]
+			},
+			"defenses": {
+				"ac": {
+					"default": 11
+				},
+				"savingThrows": {
+					"fort": 6
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 15
+				},
+				"bt": {
+					"default": 7
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 30,
+					"note": "clockwork"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 1d10}",
+				"dc": 15
+			}
+		},
+		{
+			"name": "Adaptable Paddleboat",
+			"source": "G&G",
+			"page": 93,
+			"level": 2,
+			"price": {
+				"coin": "gp",
+				"amount": 110
+			},
+			"entries": [
+				"This amphibious clockwork boat moves through the water using clockwork waterwheels to keep a slow, consistent pace. When necessary, the boat uses ingenious clockwork to reposition the waterwheels and transform them into wheels suitable for land."
+			],
+			"traits": [
+				"uncommon",
+				"medium"
+			],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 4,
+					"unit": "feet"
+				}
+			},
+			"passengers": 1,
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Sailing Lore",
+					"dc": 16
+				},
+				{
+					"skill": "Driving Lore",
+					"dc": 16
+				},
+				{
+					"skill": "Crafting",
+					"dc": 18
+				}
+			],
+			"abilities": {
+				"bot": [
+					{
+						"entries": [
+							"The pilot engages a lever that activates the clockwork components to transform the adaptable paddleboat's waterwheels into wheels for rolling along the ground. This grants the adaptable paddleboat Speed 20 feet and reduces its swim Speed to 5 feet. This transformation lasts until the pilot disengages the wheels by using this activity again."
+						],
+						"activity": {
+							"number": 3,
+							"unit": "action"
+						},
+						"name": "Deploy Wheels"
+					},
+					{
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 16, standby"
+						],
+						"name": "Wind-Up"
+					}
+				]
+			},
+			"defenses": {
+				"ac": {
+					"default": 13
+				},
+				"savingThrows": {
+					"fort": 8
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 30
+				},
+				"bt": {
+					"default": 15
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "swim",
+					"speed": 15,
+					"note": "clockwork"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 2d6}",
+				"dc": 16
+			}
+		},
+		{
+			"name": "Steam Cart",
+			"source": "G&G",
+			"page": 94,
+			"level": 2,
+			"price": {
+				"coin": "gp",
+				"amount": 120
+			},
+			"entries": [
+				"A steam cart looks like a cart with an alchemical cauldron that produces steam to power the cart's movement through a simple engine."
+			],
+			"traits": [
+				"rare",
+				"large"
+			],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 4,
+					"unit": "feet"
+				}
+			},
+			"passengers": 1,
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 16
+				},
+				{
+					"skill": "Crafting",
+					"dc": 18
+				}
+			],
+			"abilities": {
+				"bot": [
+					{
+						"entries": [
+							"Whenever the steam cart takes collision damage, its engine expels a dense cloud of steam in a 5-foot emanation. The steam cart and all creatures in the steam become concealed, and creatures outside the steam become {@condition concealed} to creatures within it. The steam dissipates in 1 round."
+						],
+						"name": "Steam Cloud"
+					}
+				]
+			},
+			"defenses": {
+				"ac": {
+					"default": 12
+				},
+				"savingThrows": {
+					"fort": 8
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 30
+				},
+				"bt": {
+					"default": 15
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 25,
+					"note": "alchemical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 2d8}",
+				"dc": 16
+			}
+		},
+		{
+			"name": "Sand Diver",
+			"source": "G&G",
+			"page": 94,
+			"level": 3,
+			"price": {
+				"coin": "gp",
+				"amount": 120
+			},
+			"entries": [
+				"A sand diver is a vaguely scorpion-shaped vehicle that uses alchemical reactions to propel itself. The tail-like structure acts as a heat sink and releases alchemical fumes behind the diver as it burrows. Instead of pincers, it has two burrowing mechanisms in front that allow it to dig through sand."
+			],
+			"traits": [
+				"uncommon",
+				"large"
+			],
+			"space": {
+				"long": {
+					"number": 15,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 6,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 6,
+					"unit": "feet"
+				}
+			},
+			"passengers": 2,
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 18
+				},
+				{
+					"skill": "Crafting",
+					"dc": 20
+				}
+			],
+			"abilities": {
+				"bot": [
+					{
+						"entries": [
+							"A sand diver can only burrow through sand, using the heat and flame from its alchemical core to slowly dig its way through. The alchemical fumes left behind become trapped belowground as it {@action Burrow||Burrows}, temporarily catalyzing fragments of sand into a glass-like byproduct. Creatures that {@action Burrow} through a space this vehicle has {@action Burrow||Burrowed} through within the last 24 hours take {@damage 1d12} piercing damage from the shards (DC 17 basic Fortitude save). A creature that continues Burrowing through a stretch of the same space the sand diver recently {@action Burrow||Burrowed} through must continue to attempt this save the first time each round that it {@action Burrow||Burrows} through the shards."
+						],
+						"name": "Shard Trail"
+					},
+					{
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						],
+						"name": "Sluggish"
+					}
+				]
+			},
+			"defenses": {
+				"ac": {
+					"default": 14
+				},
+				"savingThrows": {
+					"fort": 9
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 42
+				},
+				"bt": {
+					"default": 21
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 20
+				},
+				{
+					"type": "burrow",
+					"speed": 10,
+					"note": "alchemical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 2d10}",
+				"dc": 18
+			}
+		},
+		{
+			"name": "Clockwork Wagon",
+			"source": "G&G",
+			"page": 94,
+			"level": 3,
+			"price": {
+				"coin": "gp",
+				"amount": 160
+			},
+			"entries": [
+				"A clockwork wagon is a slow, bulky wagon with cogs and gears running all along its interior and exterior, allowing it to pull about twice as much cargo as an ordinary wagon. However, it has less passenger space than an ordinary cart."
+			],
+			"traits": [
+				"uncommon",
+				"large"
+			],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 7,
+					"unit": "feet"
+				}
+			},
+			"passengers": 2,
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 18
+				},
+				{
+					"skill": "Crafting",
+					"dc": 20
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 14
+				},
+				"savingThrows": {
+					"fort": 9
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 48
+				},
+				"bt": {
+					"default": 24
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 20,
+					"note": "clockwork"
+				}
+			],
+			"abilities": {
+				"bot": [
+					{
+						"entries": [
+							"This vehicle is designed to transport heavy cargo over long distances. It can hold 400 Bulk of cargo."
+						],
+						"name": "Hauler"
+					},
+					{
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						],
+						"name": "Sluggish"
+					},
+					{
+						"entries": [
+							"1 hour of wind-up, 8 hours of operational time, DC 18, standby"
+						],
+						"name": "Wind-Up"
+					}
+				]
+			},
+			"collision": {
+				"damage": "{@dice 3d6}",
+				"dc": 16
+			}
+		},
+		{
+			"name": "Hillcross Glider",
+			"source": "QFF3",
+			"page": 75,
+			"level": 4,
+			"price": {
+				"coin": "gp",
+				"amount": 200
+			},
+			"entries": [
+				"On festival days, the people of Hillcross celebrate by launching gliders from the top of the cliffs and riding updrafts through the ravine. Hillcross gliders are made of bone and stretched hide, tied together with sinew, and sealed with a glue made from animal fat."
+			],
+			"traits": [
+				"rare",
+				"large"
+			],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 3,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Piloting Lore",
+					"dc": 19
+				},
+				{
+					"skill": "Nature",
+					"dc": 21
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 16
+				},
+				"savingThrows": {
+					"fort": 11
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 48
+				},
+				"bt": {
+					"default": 24
+				},
+				"immunities": [
+					"object immunities"
+				],
+				"weaknesses": [
+					{
+						"name": "fire",
+						"amount": 5,
+						"note": "until broken"
+					}
+				]
+			},
+			"speed": [
+				{
+					"type": "fly",
+					"speed": 35,
+					"note": "wind"
+				}
+			],
+			"abilities": {
+				"bot": [
+					{
+						"entries": [
+							"The only way to launch a Hillcross glider is to jump off a steep incline with favorable wind conditions. The glider is uncontrolled and falls 60 feet each round until the pilot successfully Takes Control. If the glider hits the ground before the pilot Takes Control, the pilot and the glider both take falling damage."
+						],
+						"name": "Starting Drop"
+					}
+				]
+			},
+			"collision": {
+				"damage": "{@dice 2d8}",
+				"dc": 19
+			}
+		},
+		{
+			"name": "Steam Trolley",
+			"source": "G&G",
+			"page": 94,
+			"level": 4,
+			"price": {
+				"coin": "gp",
+				"amount": 250
+			},
+			"entries": [
+				"A steam trolley is essentially a much bigger steam cart, with a heavier-duty alchemical cauldron and furnace feeding into a larger steam engine."
+			],
+			"traits": [
+				"rare",
+				"large"
+			],
+			"space": {
+				"long": {
+					"number": 15,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 8,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "crew",
+					"number": 1
+				}
+			],
+			"passengers": 6,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 19
+				},
+				{
+					"skill": "Crafting",
+					"dc": 21
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 15
+				},
+				"savingThrows": {
+					"fort": 11
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 50
+				},
+				"bt": {
+					"default": 25
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 25,
+					"note": "alchemical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 3d8}",
+				"dc": 19
+			}
+		},
+		{
+			"name": "Firework Pogo",
+			"source": "LOTGB",
+			"page": 76,
+			"level": 4,
+			"price": {
+				"coin": "gp",
+				"amount": 300
+			},
+			"traits": [
+				"uncommon",
+				"medium"
+			],
+			"space": {
+				"long": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 5,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 5,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"pilotingCheck": [
+				{
+					"skill": "Crafting",
+					"dc": 21
+				},
+				{
+					"skill": "Piloting Lore",
+					"dc": 19
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 17
+				},
+				"savingThrows": {
+					"fort": 11
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 70
+				},
+				"bt": {
+					"default": 35
+				},
+				"immunities": [
+					"object immunities"
+				],
+				"weaknesses": [
+					{
+						"name": "fire",
+						"amount": 10,
+						"note": "until broken"
+					}
+				]
+			},
+			"speed": [
+				{
+					"type": "jump jet",
+					"note": "alchemical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 2d10}",
+				"dc": 19
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Jump Jet",
+						"entries": [
+							"The firework pogo moves exclusively via {@action Leap||Leaping}. For each action spent to {@action Drive}, the pogo {@action Leap||Leaps} 20 feet horizontally or 10 feet vertically."
+						]
+					},
+					{
+						"name": "Unstable Launch",
+						"entries": [
+							"When the pilot uses a 3-action activity to recklessly {@action Drive} the firework pogo, it emits a burst of flames on launch that deals {@damage 3d6} fire damage to the pilot, the pogo itself, and each creature in a 10-foot radius (DC 19 basic Reflex save)."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Siege Tower",
+			"source": "G&G",
+			"page": 77,
+			"level": 4,
+			"price": {
+				"coin": "gp",
+				"amount": 300
+			},
+			"traits": [
+				"uncommon",
+				"gargantuan"
+			],
+			"space": {
+				"long": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 20,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 40,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				},
+				{
+					"type": "pushers",
+					"number": 9
+				}
+			],
+			"passengers": 40,
+			"pilotingCheck": [
+				{
+					"skill": "Diplomacy",
+					"dc": 21
+				},
+				{
+					"skill": "Intimidation",
+					"dc": 21
+				},
+				{
+					"skill": "Warfare Lore",
+					"dc": 19
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 16
+				},
+				"savingThrows": {
+					"fort": 11
+				},
+				"hardness": {
+					"default": 10
+				},
+				"hp": {
+					"default": 40
+				},
+				"bt": {
+					"default": 20
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 10,
+					"note": "pushed by the pushers in the crew"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 3d10}",
+				"dc": 18
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Sluggish",
+						"entries": [
+							"This vehicle must move twice its length for each 90-degree turn it makes."
+						]
+					},
+					{
+						"name": "Tiered",
+						"entries": [
+							"A siege tower has five levels. The bottom level houses the crew, and each higher level carries up to 10 passengers. The tiers are specifically meant to be protective and give those within the siege tower greater cover (or standard cover if the siege tower is broken). Each tier is connected to the one above it by a 7-foot ladder.",
+							"The siege tower has a corvus at its highest tier: a vertical bridge that can be lowered to allow creatures to cross gaps. Lowering the corvus takes a total of 3 Interact actions. Moving the siege tower while the corvus is lowered is highly dangerous, especially for anyone on the corvus. When it's open, creatures in the top tier don't have cover from the side with the corvus, and creatures on the lowered corvus don't have cover except from below."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Armored Carriage",
+			"source": "G&G",
+			"page": 94,
+			"level": 5,
+			"price": {
+				"coin": "gp",
+				"amount": 400
+			},
+			"traits": [
+				"uncommon",
+				"large"
+			],
+			"entries": ["Slow but steady, an armored carriage combines clockwork with a protective hull for a safe and comfortable ride."],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 10,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 3,
+			"pilotingCheck": [
+				{
+					"skill": "Driving Lore",
+					"dc": 20
+				},
+				{
+					"skill": "Crafting",
+					"dc": 21
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 19
+				},
+				"savingThrows": {
+					"fort": 12
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 70
+				},
+				"bt": {
+					"default": 35
+				},
+				"immunities": [
+					"object immunities"
+				]
+			},
+			"speed": [
+				{
+					"type": "walk",
+					"speed": 25,
+					"note": "clockwork"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 3d10}",
+				"dc": 20
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Weapon Mount",
+						"entries": [
+							"This vehicle has one rear weapon mount that can be equipped with a ranged weapon. At purchase, this weapon mount is empty. Installing or uninstalling a weapon into this mount requires 10 minutes, a successful DC 20 Crafting check, as well as an appropriate weapon to install."
+						]
+					},
+					{
+						"name": "Wind-Up",
+						"entries": [
+							"10 minutes of wind-up, 1 hour of operational time, DC 20, standby"
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Firefly",
+			"source": "G&G",
+			"page": 94,
+			"level": 5,
+			"price": {
+				"coin": "gp",
+				"amount": 450
+			},
+			"traits": [
+				"uncommon",
+				"large"
+			],
+			"entries": ["A firefly blends magic and technology, using electricity magic and magnetism to hover just above the ground. While a firefly is more box-like than insect-shaped, it gets its name from the constant glow of the light and electricity magic that power it, as well as from the stabilizing magnets that protrude from its sides in roughly the same position as wings would be."],
+			"space": {
+				"long": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"wide": {
+					"number": 10,
+					"unit": "feet"
+				},
+				"high": {
+					"number": 10,
+					"unit": "feet"
+				}
+			},
+			"crew": [
+				{
+					"type": "pilot",
+					"number": 1
+				}
+			],
+			"passengers": 3,
+			"pilotingCheck": [
+				{
+					"skill": "Piloting Lore",
+					"dc": 20
+				},
+				{
+					"skill": "Arcana",
+					"dc": 22
+				},
+				{
+					"skill": "Crafting",
+					"dc": 22
+				}
+			],
+			"defenses": {
+				"ac": {
+					"default": 16
+				},
+				"savingThrows": {
+					"fort": 12
+				},
+				"hardness": {
+					"default": 5
+				},
+				"hp": {
+					"default": 60
+				},
+				"bt": {
+					"default": 30
+				},
+				"immunities": [
+					"object immunities"
+				],
+				"weaknesses": [
+					{
+						"name": "electricity",
+						"amount": "10"
+					}
+				]
+			},
+			"speed": [
+				{
+					"type": "hover",
+					"speed": 20,
+					"note": "electrical, magical"
+				}
+			],
+			"collision": {
+				"damage": "{@dice 3d8}",
+				"dc": 20
+			},
+			"abilities": {
+				"bot": [
+					{
+						"name": "Flash",
+						"activity": {
+							"number": 3,
+							"unit":"action"
+						},
+						"traits": ["light"],
+						"entries": [
+							"The pilot overcharges the vehicle, causing it to create a brilliant flash of light. All creatures in the bright light from its glow aura must succeed at a DC 19 Fortitude save or be {@condition dazzled 1} minute. The firefly's light dims for 10 minutes, reducing its glow to 10 feet of dim light, during which time it can't use flash. Flash stops working if the firefly is {@condition broken}."
+						]
+					},
+					{
+						"name": "Glow",
+						"traits": ["light", "evocation", "electricity", "magical"],
+						"entries": [
+							"Powered by magical lightning, this vehicle sheds bright light within 20 feet, and dim light for a further 20 feet."
+						]
+					},
+					{
+						"name": "Hover",
+						"entries": [
+							"This vehicle is held aloft by rapidly spinning propellers that enable it to hover 1 foot in the air. It is incapable of flying any higher, and when the pilot stops the magic or the vehicle breaks, it descends 1 foot to the ground."
+						]
+					}
+				]
 			}
 		}
 	]
