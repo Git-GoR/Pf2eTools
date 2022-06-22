@@ -14147,7 +14147,7 @@
 			},
 			"category": "Oil",
 			"entries": [
-				"When you apply this thick, viscous oil to a non-magical weapon or suit of armor, that item immediately becomes magically potent. If the item is a weapon, it temporarily becomes a +1 striking weapon, or, if it's armor, it temporarily becomes +1 resilient armor. This lasts for 1 minute."
+				"When you apply this thick, viscous oil to a weapon or suit of armor, that item immediately becomes magically potent. If the item is a weapon, it temporarily becomes a +1 striking weapon, or, if it's armor, it temporarily becomes +1 resilient armor. This lasts for 1 minute."
 			]
 		},
 		{
@@ -15384,7 +15384,7 @@
 						"freq": 1
 					},
 					"entries": [
-						"You squeeze juice from one of the berries and smear it onto a non-magical club or staff to cast {@spell shillelagh} upon it."
+						"You squeeze juice from one of the berries and smear it onto a club or staff to cast {@spell shillelagh} upon it."
 					]
 				},
 				{

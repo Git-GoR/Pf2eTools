@@ -1893,7 +1893,7 @@
 							"page": 214,
 							"name": "Animal Companions",
 							"entries": [
-								"An animal companion is a loyal comrade who follows your orders without you needing to use Handle an Animal on it. Your animal companion has the minion trait, and it gains 2 actions during your turn if you use the {@action Command an Animal} action to command it; this is in place of the usual effects of {@action Command an Animal}. If your companion dies, you can spend a week of downtime to replace it at no cost. You can have only one animal companion at a time.",
+								"An animal companion is a loyal comrade who follows your orders without you needing to use Handle an Animal on it. Your animal companion has the {@trait animal} and {@trait minion} traits, and it gains 2 actions during your turn if you use the {@action Command an Animal} action to command it; this is in place of the usual effects of {@action Command an Animal}. If your companion dies, you can spend a week of downtime to replace it at no cost. You can have only one animal companion at a time.",
 								{
 									"type": "pf2-h3",
 									"page": 214,
@@ -1953,7 +1953,7 @@
 									"page": 214,
 									"name": "Nimble Animal Companions",
 									"entries": [
-										"To advance a mature animal companion to a nimble animal companion, increase its Dexterity modifier by 2 and its Strength, Constitution, and Wisdom modifiers by 1. It deals 2 additional damage with its unarmed attacks. Increase its proficiency ranks in {@skill Acrobatics} and unarmored defense to expert. It also learns the advanced maneuver for its type. Its attacks become magical for the purpose of ignoring resistances."
+										"To advance a mature animal companion to a nimble animal companion, increase its Dexterity modifier by 2 and its Strength, Constitution, and Wisdom modifiers by 1. It deals 2 additional damage with its unarmed attacks. Increase its proficiency ranks in {@skill Acrobatics} to expert. It also learns the advanced maneuver for its type. Its attacks become magical for the purpose of ignoring resistances."
 									],
 									"data": {
 										"quickrefIndex": true
@@ -1992,7 +1992,7 @@
 											"page": 217,
 											"name": "Ambusher",
 											"entries": [
-												"In your companion's natural environment, it can use a Sneak action even if it's currently observed. Its proficiency rank in {@skill Stealth} increases to expert (or master if it was already an expert from its type), and its Dexterity modifier increases by 1. Its proficiency rank for unarmored defense increases to expert, or master if it's nimble."
+												"In your companion's natural environment, it can use a {@action Sneak} action even if it's currently observed. Its proficiency rank in {@skill Stealth} increases to expert (or master if it was already an expert from its type), and its Dexterity modifier increases by 1. Its proficiency rank for unarmored defense increases to expert."
 											]
 										},
 										{
@@ -2009,7 +2009,7 @@
 											"name": "Daredevil",
 											"entries": [
 												"Your companion joins the fray with graceful leaps and dives.",
-												"It gains the deny advantage ability, so it isn't {@condition flat-footed} to hidden, undetected, or flanking creatures unless such a creature's level is greater than yours. Its proficiency rank in {@skill Acrobatics} increases to master, and its Dexterity modifier increases by 1. Its proficiency rank in unarmored defense increases to expert, or master if it's nimble."
+												"It gains the {@classFeature deny advantage|barbarian||3} ability, so it isn't {@condition flat-footed} to hidden, undetected, or flanking creatures unless such a creature's level is greater than yours. Its proficiency rank in {@skill Acrobatics} increases to master, and its Dexterity modifier increases by 1. Its proficiency rank in unarmored defense increases to expert."
 											]
 										},
 										{
