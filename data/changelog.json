@@ -158,7 +158,7 @@
 		{
 			"ver": "0.5.13",
 			"date": "2022-06-23",
-			"txt": "- Added rarity to Archetypes page\n- (Typos/Tags)"
+			"txt": "- Added rarity filters to Archetypes and Classes pages\n- (Typos/Tags)"
 		}
 	]
 }
