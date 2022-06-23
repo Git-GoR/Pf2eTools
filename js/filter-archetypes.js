@@ -13,11 +13,12 @@ class PageFilterArchetypes extends PageFilter {
 
 	mutateForFilters (archetype, opts) {
 		archetype._fSources = SourceFilter.getCompleteFilterSources(archetype);
+		if (archetype.rarity) archetype._fRarity = archetype.rarity.toTitleCase();
 	}
 
 	addToFilters (archetype, isExcluded, opts) {
 		if (isExcluded) return;
-		this._rarityFilter.addItem(archetype.rarity ? archetype.rarity.toTitleCase() : "");
+		this._rarityFilter.addItem(archetype._fRarity);
 		this._sourceFilter.addItem(archetype._fSources);
 		this._levelFilter.addItem(archetype.dedicationLevel);
 		this._benefitsFilter.addItem(archetype.benefits);
@@ -38,7 +39,7 @@ class PageFilterArchetypes extends PageFilter {
 		return this._filterBox.toDisplay(
 			values,
 			a._fSources,
-			a.rarity,
+			a._fRarity,
 			a.dedicationLevel,
 			a.benefits,
 			a.miscTags,
