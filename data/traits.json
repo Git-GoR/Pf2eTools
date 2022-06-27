@@ -38,7 +38,7 @@
 				"Schools & Traditions"
 			],
 			"entries": [
-				"{@note Replace this trait with another fitting magic tradition, such as {@trait Arcane}, {@trait Divine}, {@trait Primal}, or {@trait Occult}."
+				"{@note Replace this trait with another fitting magic tradition, such as {@trait Arcane}, {@trait Divine}, {@trait Primal}, or {@trait Occult}.}"
 			]
 		},
 		{
