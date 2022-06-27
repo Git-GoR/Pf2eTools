@@ -1013,11 +1013,10 @@ class ClassesPage extends BaseComponent {
 		const $wrpTblClass = $(`#advancements`).empty();
 		const cls = this.activeClass;
 
-		Renderer.get().resetHeaderIndex();
 		for (let i = 0; i < 20; i++) {
 			if (!cls.classFeatures[i]) cls.classFeatures[i] = []
 		}
-		const renderer = Renderer.get()
+		const renderer = Renderer.get().resetHeaderIndex();
 		const metasTblRows = cls.classFeatures.map((lvlFeatures, ixLvl) => {
 			const lvlFeaturesFilt = lvlFeatures
 				.filter(it => it.name && it.type !== "inset"); // don't add inset entry names to class table
@@ -1150,11 +1149,19 @@ class ClassesPage extends BaseComponent {
 		});
 
 		this._fnTableHandleFilterChange = (filterValues) => {
+			const isUseSubclassSources = !this._pageFilter.isClassNaturallyDisplayed(filterValues, this.activeClassRaw) && this._pageFilter.isAnySubclassDisplayed(filterValues, this.activeClassRaw);
 			metasTblRows.forEach(metaTblRow => {
 				metaTblRow.metasFeatureLinks.forEach(metaFeatureLink => {
 					if (metaFeatureLink.source) {
-						// FIXME: length of _filters hardcoded...
-						const isHidden = !this.filterBox.toDisplay(filterValues, metaFeatureLink.source, null, Array(5), null);
+						const isHidden = !this.filterBox.toDisplayByFilters(
+							filterValues,
+							{
+								filter: this._pageFilter.sourceFilter,
+								value: isUseSubclassSources && metaFeatureLink.source === this.activeClassRaw.source
+									? this._pageFilter.getActiveSource(filterValues)
+									: metaFeatureLink.source,
+							},
+						);
 						metaFeatureLink.isHidden = isHidden;
 						metaFeatureLink.$wrpLink.toggleClass("hidden", isHidden);
 					}
@@ -1173,7 +1180,7 @@ class ClassesPage extends BaseComponent {
 			<div class="pf2-table__label">Your</div>
 			<div class="pf2-table__label"></div>
 			<div class="pf2-table__label">Level</div>
-			<div class="pf2-table__label"><span>Class Features${Renderer.get()._renderTable_getMinimizeButton()}</span></div>
+			<div class="pf2-table__label"><span>Class Features${renderer._renderTable_getMinimizeButton()}</span></div>
 			${metasTblRows.map(it => it.$row)}
 		</div>`.appendTo($wrpTblClass);
 		$wrpTblClass.show();
