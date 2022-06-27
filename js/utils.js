@@ -692,6 +692,12 @@ JqueryUtil = {
 
 		JqueryUtil._ACTIVE_TOAST.push($toast);
 	},
+
+	isMobile () {
+		if (navigator && navigator.userAgentData && navigator.userAgentData.mobile) return true;
+		// Equivalent to `$width-screen-sm`
+		return window.matchMedia("(max-width: 768px)").matches;
+	},
 };
 
 if (typeof window !== "undefined") window.addEventListener("load", JqueryUtil.initEnhancements);

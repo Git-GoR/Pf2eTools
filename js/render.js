@@ -4305,6 +4305,41 @@ Renderer.creature = {
 			fluffProp: "creatureFluff",
 		});
 	},
+
+	// region Custom hash ID packing/unpacking
+	getCustomHashId (cr) {
+		if (!cr._isScaledLvl) return null;
+
+		const {
+			name,
+			source,
+			_scaledLvl: scaledLvl,
+		} = cr;
+
+		return [
+			name,
+			source,
+			scaledLvl ?? "",
+		].join("__").toLowerCase();
+	},
+
+	getUnpackedCustomHashId (customHashId) {
+		if (!customHashId) return null;
+		const [, , scaledLvl] = customHashId.split("__").map(it => it.trim());
+		if (scaledLvl == null) return null;
+		return {
+			_scaledLvl: Number(scaledLvl),
+			customHashId,
+		};
+	},
+	// endregion
+
+	async pGetModifiedCreature (cr, customHashId) {
+		if (!customHashId) return cr;
+		const {_scaledLvl} = Renderer.creature.getUnpackedCustomHashId(customHashId);
+		if (_scaledLvl != null) return scaleCreature.scale(cr, _scaledLvl);
+		throw new Error(`Unhandled custom hash ID "${customHashId}"`);
+	},
 };
 
 Renderer.deity = {
