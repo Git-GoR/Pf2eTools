@@ -31,12 +31,6 @@ class PageFilterBestiary extends PageFilter {
 			discardCategories: {
 				"Ancestry & Heritage": true,
 			},
-			filterOpts: {
-				"Alignment": {
-					displayFn: Parser.alignAbvToFull,
-					itemSortFn: SortUtil.ascSort,
-				},
-			},
 		});
 		this._perceptionFilter = new RangeFilter({
 			header: "Perception",

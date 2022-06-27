@@ -712,32 +712,53 @@ Parser.COMPONENTS_TO_FULL["M"] = "material";
 Parser.COMPONENTS_TO_FULL["S"] = "somatic";
 Parser.COMPONENTS_TO_FULL["F"] = "focus";
 
-Parser.alignAbvToFull = function (align) {
+Parser.alignToFull = function (align) {
 	switch (String(align).toLowerCase()) {
 		case null:
 			return "";
 		case "any":
 			return "Any";
 		case "lg":
+		case "lawful good":
 			return "Lawful Good";
 		case "ng":
+		case "neutral good":
 			return "Neutral Good";
 		case "cg":
+		case "chaotic good":
 			return "Chaotic Good";
 		case "ln":
+		case "lawful neutral":
 			return "Lawful Neutral";
 		case "n":
+		case "neutral":
 			return "Neutral";
 		case "cn":
+		case "chaotic neutral":
 			return "Chaotic Neutral";
 		case "le":
+		case "lawful evil":
 			return "Lawful Evil";
 		case "ne":
+		case "neutral evil":
 			return "Neutral Evil";
 		case "ce":
+		case "chaotic evil":
 			return "Chaotic Evil";
 		case "all":
 			return "All";
+		case "l":
+		case "lawful":
+			return "Lawful";
+		case "c":
+		case "chaotic":
+			return "Chaotic";
+		case "g":
+		case "good":
+			return "Good";
+		case "e":
+		case "evil":
+			return "Evil";
 		default:
 			return "\u2014";
 	}

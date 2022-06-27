@@ -466,7 +466,7 @@ class BestiaryPage extends ListPage {
 
 		// reset tabs
 		const statTab = Renderer.utils.tabButton(
-			"data",
+			"Creature",
 			() => {
 				$(`#float-token`).show();
 			},
