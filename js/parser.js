@@ -1855,21 +1855,18 @@ Parser.DMGTYPE_JSON_TO_FULL = {
 	"-": "negative",
 };
 
-Parser.levelToDC = function (level, spell, difficulty) {
-	if (isNaN(level)) return "?"
-	let DC = 0
-	if (spell.toLowerCase() === "focus" || spell.toLowerCase() === "spell" || spell === true) level = (level * 2) - 1
-	if (level < 21) {
-		DC = 14 + Number(level) + Math.floor(level / 3)
-	} else {
-		DC = 40 + Number((level - 20) * 2)
-	}
+Parser.levelToDC = function (level, isSpell, traits) {
+	if (isNaN(level)) return "?";
+	let DC = 0;
+	if (isSpell.toLowerCase() === "focus" || isSpell.toLowerCase() === "spell" || isSpell === true) level = (level * 2) - 1;
+	if (level < 21) DC = 14 + Number(level) + Math.floor(level / 3);
+	else DC = 40 + Number((level - 20) * 2);
+
 	// The Difficulty is negative for easier adjustments and positive for harder adjustments. 0 is default.
-	if (difficulty) {
-		if (typeof difficulty === "string" || difficulty instanceof String) { difficulty = difficulty.split() }
-		for (let i = 0; i < difficulty.length; i++) {
-			let typeNum = difficulty[i];
-			switch (Parser.rarityToNumber(typeNum)) {
+	if (traits && traits.length) {
+		const difficulties = typeof traits === "string" ? traits.split(" ") : traits.filter(it => typeof it === "string");
+		difficulties.forEach(difficulty => {
+			switch (Parser.rarityToNumber(difficulty)) {
 				// Incredibly Easy
 				case -3:
 					DC = DC - 10;
@@ -1896,7 +1893,7 @@ Parser.levelToDC = function (level, spell, difficulty) {
 					break;
 				default: break;
 			}
-		}
+		});
 	}
 
 	return `${DC}${level < 0 || level > 25 ? `*` : ""}`
