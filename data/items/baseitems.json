@@ -1,6 +1,173 @@
 {
 	"baseitem": [
 		{
+			"name": "Leiomano",
+			"source": "FRP2",
+			"page": 76,
+			"type": "Equipment",
+			"traits": [
+				"uncommon",
+				"deadly d10", "versatile S"
+			],
+			"access": "If the player character come from a region in Tian Xia, this weapon is common",
+			"price": {
+				"amount": 2,
+				"coin": "gp"
+			},
+			"bulk": 1,
+			"hands": 1,
+			"weaponData": {
+				"damage": "1d6",
+				"damageType": "B",
+				"group": "Club"
+			},
+			"category": "Weapon",
+			"subCategory": "Martial",
+			"entries": [
+				"This thick club is inset with sharp teeth, typically from a shark, that easily tear flesh. It is the preferred weapon of many Minatan warriors."
+			]
+		},
+		{
+			"name": "Kusarigama",
+			"source": "FRP2",
+			"page": 76,
+			"type": "Equipment",
+			"traits": [
+				"uncommon",
+				"disarm", "monk", "reach", "trip", "versatile B"
+			],
+			"access": "If the player character come from a region in Tian Xia, this weapon is common",
+			"price": {
+				"amount": 2,
+				"coin": "gp"
+			},
+			"bulk": 1,
+			"hands": 2,
+			"weaponData": {
+				"damage": "1d8",
+				"damageType": "S",
+				"group": "Knife"
+			},
+			"category": "Weapon",
+			"subCategory": "Martial",
+			"entries": [
+				"This impressive weapon consists of a weight attached to a kama via a length of chain, which aids with disarming an opponent or attacking from a distance."
+			]
+		},
+		{
+			"name": "Wind and Fire Wheel",
+			"source": "FRP2",
+			"page": 76,
+			"type": "Equipment",
+			"traits": [
+				"uncommon",
+				"agile", "disarm", "finesse", "monk", "parry", "twin", "versatile P"
+			],
+			"access": "If the player character come from a region in Tian Xia, this weapon is common",
+			"price": {
+				"amount": 2,
+				"coin": "gp"
+			},
+			"bulk": "L",
+			"hands": 1,
+			"weaponData": {
+				"damage": "1d6",
+				"damageType": "S",
+				"group": "Knife"
+			},
+			"category": "Weapon",
+			"subCategory": "Advanced",
+			"entries": [
+				"This large, flat steel ring features several protruding blades typically stylized to resemble flames."
+			]
+		},
+		{
+			"name": "Karambit",
+			"source": "FRP2",
+			"page": 76,
+			"type": "Equipment",
+			"traits": [
+				"uncommon",
+				"agile", "fatal d8", "finesse", "versatile S"
+			],
+			"access": "If the player character come from a region in Tian Xia, this weapon is common",
+			"price": {
+				"amount": 2,
+				"coin": "gp"
+			},
+			"bulk": "L",
+			"hands": 1,
+			"weaponData": {
+				"damage": "1d4",
+				"damageType": "P",
+				"group": "Knife"
+			},
+			"category": "Weapon",
+			"subCategory": "Advanced",
+			"entries": [
+				"This small curved blade resembles a tiger’s claw and is capable of delivering deep wounds."
+			]
+		},
+		{
+			"name": "Hook Sword",
+			"source": "FRP2",
+			"page": 76,
+			"type": "Equipment",
+			"traits": [
+				"uncommon",
+				"disarm", "monk", "parry", "trip", "twin"
+			],
+			"access": "If the player character come from a region in Tian Xia, this weapon is common",
+			"price": {
+				"amount": 3,
+				"coin": "gp"
+			},
+			"bulk": 1,
+			"hands": 1,
+			"weaponData": {
+				"damage": "1d6",
+				"damageType": "S",
+				"group": "Sword"
+			},
+			"category": "Weapon",
+			"subCategory": "Advanced",
+			"entries": [
+				"This long sword has a hook near the tip which makes it easy to snag an opponent or their weapons."
+			]
+		},
+		{
+			"name": "Butterfly Sword",
+			"source": "FRP2",
+			"page": 76,
+			"type": "Equipment",
+			"traits": [
+				"uncommon",
+				"agile",
+				"disarm",
+				"finesse",
+				"monk",
+				"parry",
+				"twin"
+			],
+			"access": "If the player character come from a region in Tian Xia, this weapon is common",
+			"price": {
+				"amount": 2,
+				"coin": "gp"
+			},
+			"bulk": "L",
+			"hands": 1,
+			"weaponData": {
+				"damage": "1d4",
+				"damageType": "S",
+				"group": "Sword"
+			},
+			"category": "Weapon",
+			"subCategory": "Advanced",
+			"entries": [
+				"This short, single-edged sword typically features a cross guard that helps catch oncoming attacks. It is the preferred weapon of Butterfly Blades—highly skilled Gokan assassins."
+			]
+		},
+		{
 			"name": "Big Boom Gun",
 			"source": "G&G",
 			"page": 157,
