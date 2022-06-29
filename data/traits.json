@@ -2995,6 +2995,17 @@
 			]
 		},
 		{
+			"name": "Climbing",
+			"source": "AAWS",
+			"page": 1,
+			"categories": [
+				"Armor & Weapon"
+			],
+			"entries": [
+				"The hand holding this weapon is freely available to {@action Climb}."
+			]
+		},
+		{
 			"name": "Inventor",
 			"source": "G&G",
 			"page": 16,
