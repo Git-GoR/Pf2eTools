@@ -2646,8 +2646,8 @@
 			"requirements": "You're afflicted by a disease or poison, or are taking {@condition persistent damage}.",
 			"entries": [
 				"Your ordered physiology rejects unwelcome elements. Choose one.",
-				"Disease or Poison Attempt a saving throw against the affliction at its current stage. On a failure, the affliction's stage doesn't increase, but you suffer the effects of the stage you were already on. On a critical failure, the stage only increases by 1.",
-				"{@condition persistent damage} Attempt a DC {@flatDC 10} flat check to recover from the {@condition persistent damage}."
+				"{@b {@trait Disease} or {@trait Poison}} Attempt a saving throw against the affliction at its current stage. On a failure, the affliction's stage doesn't increase, but you suffer the effects of the stage you were already on. On a critical failure, the stage only increases by 1.",
+				"{@b {@condition Persistent damage}} Attempt a DC {@flatDC 10} flat check to recover from the {@condition persistent damage}."
 			]
 		},
 		{
@@ -3483,8 +3483,7 @@
 				"aphorite"
 			],
 			"entries": [
-				"You can enhance your senses and mental state to consider every aspect of an attack. You can cast {@spell true strike} as a divine innate spell once per day.",
-				"Egorian: The order of Hell is Nantambu: The ancient Song-Wind Order's Berth: An aphorite majority."
+				"You can enhance your senses and mental state to consider every aspect of an attack. You can cast {@spell true strike} as a divine innate spell once per day."
 			]
 		},
 		{

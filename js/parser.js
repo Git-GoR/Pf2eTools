@@ -573,7 +573,7 @@ Parser.getClassSideBarEntries = function (cls) {
 					if (element.entry) {
 						return entry.push(`{@indentSubsequent ${prof} in ${element.entry}}`);
 					} else {
-						return entry.push(`{@indentSubsequent ${prof} in your choice of ${element.skill.map(s => `{@skill ${s}}`).joinConjunct(", ", " or ")}}`);
+						return entry.push(`{@indentSubsequent ${prof} in ${element.skill.length === 1 ? "" : `your choice of`} ${element.skill.map(s => `{@skill ${s}}`).joinConjunct(", ", " or ")}}`);
 					}
 				} else return entry.push(`{@indentSubsequent ${prof} in ${element}}`);
 			});
