@@ -1493,7 +1493,7 @@
 				"reload": 1,
 				"damage": "1d8",
 				"damageType": "P",
-				"group": "Firearm"
+				"group": "Firearm|G&G"
 			},
 			"bulk": 1,
 			"category": "Weapon",

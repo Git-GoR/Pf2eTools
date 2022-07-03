@@ -131,7 +131,9 @@ class PageFilterItems extends PageFilter {
 		}) : null;
 
 		it._fGroup = [it.group, it._fweaponData.group, it._fcomboWeaponData.group, it._farmorData.group, it._fshieldData.group].filter(Boolean);
-		it._fWeaponRange = it.category === "Weapon" ? [it._fweaponData.range ? "Ranged" : "Melee", it._fcomboWeaponData ? it._fcomboWeaponData.range ? "Ranged" : "Melee" : null] : null;
+		it._fWeaponRange = []
+		if (it._fweaponData && Object.keys(it._fweaponData).length !== 0) it._fWeaponRange.push(it._fweaponData.range ? "Ranged" : "Melee")
+		if (it._fcomboWeaponData && Object.keys(it._fcomboWeaponData).length !== 0) it._fWeaponRange.push(it._fcomboWeaponData.range ? "Ranged" : "Melee")
 		it._fHands = [it.hands, it._fweaponData.hands, it._fcomboWeaponData.hands].filter(Boolean).map(it => String(it));
 		it._fMisc = [];
 		if (it.entries) {
