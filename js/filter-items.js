@@ -20,6 +20,10 @@ class PageFilterItems extends PageFilter {
 		return 0;
 	}
 
+	static findDuplicates (arr) {
+		return arr.filter((item, index) => arr.indexOf(item) !== index)
+	}
+
 	static sortItems (a, b, o) {
 		if (o.sortBy === "name") return SortUtil.compareListNames(a, b);
 		else if (o.sortBy === "category") return SortUtil.ascSortLower(a.values.category, b.values.category) || SortUtil.compareListNames(a, b);
@@ -62,7 +66,8 @@ class PageFilterItems extends PageFilter {
 		this._damageFilter = new MultiFilter({ header: "Weapon Damage", filters: [this._damageDiceFilter, this._damageTypeFilter, this._handsFilter] })
 		this._groupFilter = new Filter({
 			header: "Group",
-			displayFn: (it) => it.split("|")[0],
+			// This Mess checks if there are duplicate groups. If there are, it will display the group sources.
+			displayFn: (it) => `${it.split("|")[0]}${PageFilterItems.findDuplicates(Array.from(this._groupFilter.__itemsSet).map(x => x.split("|")[0])).includes(it.split("|")[0]) ? BrewUtil.hasSourceJson(it.split("|")[1]) ? ` (${it.split("|")[1]})` : "" : ""}`,
 		});
 		this._traitFilter = new TraitsFilter({
 			header: "Traits",
