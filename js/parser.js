@@ -230,6 +230,11 @@ Parser.hasSourceStore = function (source) {
 	Parser._sourceStoreCache = Parser._sourceStoreCache || Parser._buildSourceCache(Parser.SOURCE_JSON_TO_STORE);
 	return !!Parser._sourceStoreCache[source.toLowerCase()];
 };
+Parser._sourcePdfCache = null;
+Parser.hasSourcePdf = function (source) {
+	Parser._sourcePdfCache = Parser._sourcePdfCache || Parser._buildSourceCache(Parser.SOURCE_JSON_TO_PDF);
+	return !!Parser._sourcePdfCache[source.toLowerCase()];
+};
 Parser.sourceJsonToFull = function (source) {
 	source = Parser._getSourceStringFromSource(source);
 	if (Parser.hasSourceFull(source)) return Parser._sourceFullCache[source.toLowerCase()].replace(/'/g, "\u2019");
@@ -262,6 +267,11 @@ Parser.sourceJsonToStore = function (source) {
 	if (BrewUtil.hasSourceJson(source)) return BrewUtil.sourceJsonToUrl(source);
 	return Parser._parse_aToB(Parser.SOURCE_JSON_TO_STORE, source, null);
 };
+Parser.sourceJsonToPdf = function (source) {
+	source = Parser._getSourceStringFromSource(source);
+	if (Parser.hasSourcePdf(source)) return Parser._sourcePdfCache[source.toLowerCase()];
+	return Parser._parse_aToB(Parser.SOURCE_JSON_TO_PDF, source, null);
+}
 Parser.sourceJsonToColor = function (source) {
 	return `source${Parser._getSourceStringFromSource(source).replace(/[&\\/\\#,+()$~%.'":*?<>{}]/g, "_")}`;
 };
@@ -1639,6 +1649,9 @@ Parser.SOURCE_JSON_TO_STORE[SRC_NGD] = "https://paizo.com/products/btq027o0";
 Parser.SOURCE_JSON_TO_STORE[SRC_FOP] = "https://paizo.com/products/btq01zoh";
 Parser.SOURCE_JSON_TO_STORE[SRC_TIO] = "https://paizo.com/products/btq026k1";
 Parser.SOURCE_JSON_TO_STORE[SRC_LTIBA] = "https://paizo.com/products/btq024ys";
+
+Parser.SOURCE_JSON_TO_PDF = {};
+Parser.SOURCE_JSON_TO_PDF[SRC_CRB] = "Core Rulebook.pdf"
 
 Parser.SOURCES_ADVENTURES = new Set([
 	SRC_AOA0,

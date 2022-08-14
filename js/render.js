@@ -1516,12 +1516,20 @@ function Renderer () {
 
 	this._getReference = function (entry) {
 		if (entry.reference) {
-			let source = `<a href="${Parser.sourceJsonToStore(entry.source)}">${Parser.sourceJsonToFull(entry.source)}</a>`
+			const source = `<a href="${Parser.sourceJsonToStore(entry.source)}">${Parser.sourceJsonToFull(entry.source)}</a>`
+			
+			//If the site is being self hosted (not deployed), add a link to open pdf files in the referenced page
+			//TODO: Check if the file exists before adding the link
+			let pdf = "";
+			if (!IS_DEPLOYED){
+				pdf = `(<a href="/pdf/${Parser.sourceJsonToPdf(entry.source)}#page=${entry.page != null ? entry.page : "0"}" target="_blank" rel="noopener noreferrer" class="glyphicon glyphicon-bookmark"></a>)`
+			}
+
 			if (entry.reference.index || entry.reference.auto !== true) {
-				entry.entries.splice(entry.reference.index, 0, entry.reference.note ?? `{@note Read from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}}.`);
+				entry.entries.splice(entry.reference.index, 0, entry.reference.note ?? `{@note Read from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}${pdf}}.`);
 			} else if (!entry.entries.length) {
 				entry.entries = []
-				entry.entries.push(`{@note Read from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}}.`);
+				entry.entries.push(`{@note Read from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}${pdf}}.`);
 			} else {
 				const len = entry.entries.length;
 				for (let i = 0; i < len; ++i) {
@@ -1529,16 +1537,16 @@ function Renderer () {
 					// Else, check if the entry contains any objects. If it does, put the reference *before* the objects.
 					// Resolving that, just add the entry at the end if the previous two are false.
 					if (entry.entries[i].type === "pf2-h1-flavor" || entry.entries[i].type === "pf2-sidebar") {
-						entry.entries.splice(i + 1, 0, `{@note Read from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}}.`);
+						entry.entries.splice(i + 1, 0, `{@note Read from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}${pdf}}.`);
 						return
 					} else if (!entry.entries.filter(t => typeof t === "string").length) {
-						entry.entries.unshift(`{@note Read from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}}.`)
+						entry.entries.unshift(`{@note Read from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}${pdf}}.`)
 						return
 					} else if (typeof entry.entries[i] === "object") {
-						entry.entries.splice(i, 0, `{@note Read the rest from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}}.`)
+						entry.entries.splice(i, 0, `{@note Read the rest from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}${pdf}}.`)
 						return
 					} else {
-						entry.entries.push(`{@note Read the rest from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}}.`)
+						entry.entries.push(`{@note Read the rest from ${entry.page != null ? `page ${entry.page} of ` : ""}${source}${pdf}}.`)
 						return
 					}
 				}
